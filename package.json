@@ -72,5 +72,9 @@
     "tslint": "~5.15.0",
     "tslint-no-unused-expression-chai": "^0.1.4",
     "typescript": "~3.5.3"
+  },
+  "engines": {
+    "node" : "~12.6.0",
+    "npm" : "~6.9.0"
   }
 }

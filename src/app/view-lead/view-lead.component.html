@@ -1,0 +1,287 @@
+<div class="container" style="padding-top: 30px;">
+<div class="row">
+<div class="col-sm-12">
+<div class="search_lead">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder="Start searching for Lead Title / Name / Location / Lead Status">
+</div>
+
+<mat-accordion multi="false" >
+    <mat-expansion-panel class="open" *ngFor="let post of posts | filter:searchText">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <h5>Lead Title: {{ post.leadtitle }}</h5> <br />
+
+
+        </mat-panel-title>
+        <mat-panel-description>
+            <div class="title-width-wrapper">
+                <div class="title-width">
+                    <span>Requirement: {{ post.requirement }}</span>
+                    <span>Destination: {{ post.destination }}</span>
+                    <span>Lead Status: {{ post.leadStatus }}</span>
+                </div>
+            </div>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="lead-view-wrapper">
+
+          <div *ngIf="post.customerName">
+              <p>Customer Name <span>{{ post.customerName }}</span></p>
+          </div>
+          <div *ngIf="post.customeremail">
+            <p>Customer Email ID <span>{{ post.customeremail }}</span></p>
+          </div>
+          <div *ngIf="post.customermobile">
+            <p>Customer Mobile <span>{{ post.customermobile }}</span></p>
+          </div>
+          <div *ngIf="post.customeraddress">
+              <p>Customer Address <span style="overflow: auto; height: 43px;">{{ post.customeraddress }}</span></p>
+          </div>
+
+          <div *ngIf="post.requirement">
+              <p>Requirement <span>{{ post.requirement }}</span></p>
+          </div>
+          <div *ngIf="post.shortNote">
+              <p>Shot Note <span> {{ post.shortNote }}</span></p>
+          </div>
+          <div *ngIf="post.holidayType">
+              <p>Holiday Type <span> {{ post.holidayType }}</span></p>
+          </div>
+          <div *ngIf="post.noOfAdult">
+              <p>No Of Adult <span> {{ post.noOfAdult }}</span></p>
+          </div>
+          <div *ngIf="post.noOfKids">
+              <p>No Of Kids <span> {{ post.noOfKids }}</span></p>
+          </div>
+          <div *ngIf="post.noOfInfants">
+              <p>No Of Infants<span> {{ post.noOfInfants }}</span></p>
+          </div>
+          <div *ngIf="post.hotelPerformance">
+              <p>Hotel Performance<span> {{ post.hotelPerformance }}</span></p>
+          </div>
+          <div *ngIf="post.personCouple">
+              <p>Person / Couple<span> {{ post.personCouple }}</span></p>
+          </div>
+          <div *ngIf="post.amount">
+              <p>Amount<span> INR - {{ post.amount }}</span></p>
+          </div>
+          <div *ngIf="post.flightTrips">
+              <p>Flight Trips {{ post.flightTrips }}</p>
+          </div>
+
+          <div *ngIf="post.destination">
+              <p>Destination<span>{{ post.destination }}</span></p>
+          </div>
+          <div *ngIf="post.groupTourPackage">
+              <p>Group Tour Package List<span>{{ post.groupTourPackage }}</span></p>
+          </div>
+          <div *ngIf="post.startdate">
+            <p>Start Date<span>{{ post.startdate }}</span></p>
+          </div>
+          <div *ngIf="post.enddate">
+            <p>End Date<span>{{ post.enddate }}</span></p>
+          </div>
+          <div *ngIf="post.noOfRooms">
+            <p>No Of Rooms<span>{{ post.noOfRooms }}</span></p>
+          </div>
+          <div *ngIf="post.trainTrips">
+            <p>Train Trips<span>{{ post.trainTrips }}</span></p>
+          </div>
+          <div *ngIf="post.startingPoint">
+            <p>Starting Point<span>{{ post.startingPoint }}</span></p>
+          </div>
+          <div *ngIf="post.endingPoint">
+            <p>Ending Point<span>{{ post.endingPoint }}</span></p>
+          </div>
+          <div *ngIf="post.cabPickUp">
+            <p>Cab PickUp<span>{{ post.cabPickUp }}</span></p>
+          </div>
+          <div *ngIf="post.cabDrop">
+            <p>Cab Drop<span>{{ post.cabDrop }}</span></p>
+          </div>
+          <div *ngIf="post.flightClass">
+            <p>Flight Class<span>{{ post.flightClass }}</span></p>
+          </div>
+          <div *ngIf="post.trainClass">
+            <p>Train Class<span>{{ post.trainClass }}</span></p>
+          </div>
+          <div *ngIf="post.cabVehicleType">
+            <p>Cab Vehicle Type<span>{{ post.cabVehicleType }}</span></p>
+          </div>
+
+          <div *ngIf="post.hotelCheckIN">
+            <p>Hotel Check-IN<span>{{ post.hotelCheckIN }}</span></p>
+          </div>
+          <div *ngIf="post.hotelCheckOut">
+            <p>Hotel Check-Out<span>{{ post.hotelCheckOut }}</span></p>
+          </div>
+          <div *ngIf="post.cabTimeDate">
+            <p>Cab Date & Time<span>{{ post.cabTimeDate }}</span></p>
+          </div>
+          <div *ngIf="post.visaCountry">
+            <p>Visa Country<span>{{ post.visaCountry }}</span></p>
+          </div>
+          <div *ngIf="post.visaNoOfDays">
+            <p>Visa No Of Days<span>{{ post.visaNoOfDays }}</span></p>
+          </div>
+          <div *ngIf="post.visaType">
+            <p>Visa Type<span>{{ post.visaType }}</span></p>
+          </div>
+          <div *ngIf="post.visaRequiredDocuments">
+            <p>Visa Required Documents<span>{{ post.visaRequiredDocuments }}</span></p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.airfare" [ngClass]="{'checkbox-icon': post.airfare == 'true'}">
+            <p><i class="checked-icon"></i>Airfare</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.transportation"  [ngClass]="{'checkbox-icon': post.transportation == 'true'}">
+            <p><i class="checked-icon"></i>Internal Transportation</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.hotelstay"  [ngClass]="{'checkbox-icon': post.hotelstay == 'true'}">
+            <p><i class="checked-icon"></i>Hotel Stay</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.sightseeing"  [ngClass]="{'checkbox-icon': post.sightseeing == 'true'}">
+            <p><i class="checked-icon"></i>Sightseeing</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.visafees"  [ngClass]="{'checkbox-icon': post.visafees == 'true'}">
+            <p><i class="checked-icon"></i>visafees</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.governmentTax"  [ngClass]="{'checkbox-icon': post.governmentTax == 'true'}">
+            <p><i class="checked-icon"></i>governmentTax</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.surcharge"  [ngClass]="{'checkbox-icon': post.surcharge == 'true'}">
+            <p><i class="checked-icon"></i>surcharge</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.cruisestay"  [ngClass]="{'checkbox-icon': post.cruisestay == 'true'}">
+            <p><i class="checked-icon"></i>cruisestay</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.freegoodies"  [ngClass]="{'checkbox-icon': post.freegoodies == 'true'}">
+            <p><i class="checked-icon"></i>freegoodies</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.stayandmeals"  [ngClass]="{'checkbox-icon': post.stayandmeals == 'true'}">
+            <p><i class="checked-icon"></i>stayandmeals</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.passportfees"  [ngClass]="{'checkbox-icon': post.passportfees == 'true'}">
+            <p><i class="checked-icon"></i>passportfees</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.staybreakfast"  [ngClass]="{'checkbox-icon': post.staybreakfast == 'true'}">
+            <p><i class="checked-icon"></i>staybreakfast</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.tourmanager"  [ngClass]="{'checkbox-icon': post.tourmanager == 'true'}">
+            <p><i class="checked-icon"></i>tourmanager</p>
+          </div>
+          <div class="checkbox-style" *ngIf="post.breakfastanddinner"  [ngClass]="{'checkbox-icon': post.breakfastanddinner == 'true'}">
+            <p><i class="checked-icon"></i>breakfastanddinner</p>
+          </div>
+          <div *ngIf="post.totaldayscount">
+            <p>Total Days<span>{{ post.totaldayscount }}</span></p>
+          </div>
+          <div *ngIf="post.itineraryType">
+            <p>Itinerary Type<span>{{ post.itineraryType }}</span></p>
+          </div>
+          <div *ngIf="post.itineraryName">
+            <p>Itinerary Name<span>{{ post.itineraryName }}</span></p>
+          </div>
+          <div *ngIf="post.citiesCovers">
+            <p>Cities Covers<span>{{ post.citiesCovers }}</span></p>
+          </div>
+          <div *ngIf="post.invoicenumber">
+            <p>Invoice Number<span>{{ post.invoicenumber }}</span></p>
+          </div>
+          <div *ngIf="post.invoicedate">
+            <p>Invoice Date<span>{{ post.invoicedate }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceBilling">
+            <p>Invoice Billing Note<span>{{ post.invoiceBilling }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceCustomerGSTIN">
+            <p>Invoice Customer GSTIN<span>{{ post.invoiceCustomerGSTIN }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceStateCode">
+            <p>Invoice State Code<span>{{ post.invoiceStateCode }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceCustmerPAN">
+            <p>Invoice Custmer PAN<span>{{ post.invoiceCustmerPAN }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceAddress">
+            <p>Invoice Customer Address<span>{{ post.invoiceAddress }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceSupply">
+            <p>Invoice Supply<span>{{ post.invoiceSupply }}</span></p>
+          </div>
+          <div *ngIf="post.invoicecomment1">
+            <p> Invoice Comment 1<span>{{ post.invoicecomment1 }}</span></p>
+          </div>
+          <div *ngIf="post.invoicecomment2">
+            <p> Invoice Comment 2<span>{{ post.invoicecomment2 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceRate1">
+            <p>Invoice Rate1<span>{{ post.invoiceRate1 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceQuantity1">
+            <p>invoiceQuantity1<span>{{ post.invoiceQuantity1 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceDiscount1">
+            <p>invoiceDiscount1<span>{{ post.invoiceDiscount1 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceGST1">
+            <p>invoiceGST1<span>{{ post.invoiceGST1 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceHSN1">
+            <p>invoiceHSN1<span>{{ post.invoiceHSN1 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceRate2">
+            <p>invoiceRate2<span>{{ post.invoiceRate2 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceQuantity2">
+            <p>invoiceQuantity2<span>{{ post.invoiceQuantity2 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceDiscount2">
+            <p>invoiceDiscount2<span>{{ post.invoiceDiscount2 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceGST2">
+            <p>invoiceGST2<span>{{ post.invoiceGST2 }}</span></p>
+          </div>
+          <div *ngIf="post.invoiceHSN2">
+            <p>invoiceHSN2<span>{{ post.invoiceHSN2 }}</span></p>
+          </div>
+
+
+
+      </div>
+      <div class="itineraryView">
+
+      </div>
+    <mat-action-row>
+        <div class="pdf-controlls">
+          <button mat-button color="primary" [routerLink] = "['/itinerary', post.id]">Itinerary</button>
+          <!-- <button mat-button color="primary" (click)="generatePdf(post)">Itinerary</button> -->
+          <button mat-button color="primary" [routerLink] = "['/invoice', post.id]">Invoice</button>
+          <!-- <button mat-button color="primary" [routerLink] = "['/pdfpage', post.id]">Lead pdf</button> -->
+          <button mat-button color="primary" [routerLink] = "['/hotelVoucher']">Hotel Voucher</button>
+          <button mat-button color="primary" [routerLink] = "['/viewpdf']">View Pdf</button>
+        </div>
+          <button mat-button color="primary" [routerLink] = "['/editlead', post.id]">Edit</button>
+          <button mat-button color="warn" (click)="onDelete(post.id)">Delete</button>
+      </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+
+
+<div class="alert alert-danger" role="alert"  *ngIf="noRecords">
+    <span>No Leads added yet.!!</span>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div>
+          <mat-paginator [length]="totalPost" [pageSize]="postsPerPage" [pageSizeOptions]="pageSizeOptions" (page)=onChangedPage($event)></mat-paginator>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<br />
+<br />
+<br />

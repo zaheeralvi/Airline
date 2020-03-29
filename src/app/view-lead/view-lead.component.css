@@ -1,0 +1,54 @@
+.lead-view-wrapper div {
+  width: 25%;
+  float: left;
+  height: 70px;
+  padding: 5px;
+}
+
+.lead-view-wrapper p {
+  color: #ccc;
+  text-transform: capitalize;
+}
+.lead-view-wrapper span {
+  display: block;
+  color: #727272;
+}
+.checkbox-style p{
+  color: #727272;
+}
+
+.checkbox-icon .checked-icon {
+    background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/checkbox.png);
+    padding: 0px 10px;
+    background-repeat: no-repeat;
+    background-size: 15px;
+  }
+
+  .search_lead:after {
+    content: '';
+    background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/search.jpg);
+    padding: 0px 10px;
+    background-repeat: no-repeat;
+    background-size: 18px;
+    position: absolute;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+    top: 8px;
+    z-index: 9;
+  }
+
+  .search_lead input {
+    padding-left: 28px;
+  }
+
+  .search_lead {
+    margin: 0 0 30px;
+    width: 40%;
+}
+
+
+
+#itineraryPDF {
+  clear: both;
+}

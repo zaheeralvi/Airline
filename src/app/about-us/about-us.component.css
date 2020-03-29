@@ -1,0 +1,40 @@
+.about-us-wrapper .col-sm-4 {
+  max-width: 25%;
+  float: left;
+}
+.about-us-wrapper .col-sm-3 {
+  padding-left: 0;
+}
+.about-us-wrapper {
+  margin: 30px 0 50px 0;
+  display: flow-root;
+}
+
+.about-us-wrapper img {
+  width: 120px;
+}
+.our-partners {
+  margin-bottom: 50px;
+  display: flex;
+  border-top: 1px solid #ddd;
+  padding-top: 30px;
+}
+.our-partners .col-sm-2 {
+  float: left;
+  text-align: center;
+  clear: right;
+}
+.our-partners img {
+  width: 60px;
+}
+.our-partners .col-sm-2:after {
+  content: '';
+  background-color: #eee;
+  position: absolute;
+  right: 0;
+  padding: 1px;
+  height: 30px;
+  top: 30%;
+}
+
+

@@ -1,0 +1,675 @@
+/* The container */
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.selectedimage img {
+  max-width: 100%;
+  clear: both;
+}
+.day-image-wrapper {
+  background-color: #ddd;
+  text-align: center;
+}
+.sightseeing_wrapper .col-sm-6 {
+  float: left;
+}
+.pre_invoice_wrapperDaywise {
+  text-align: right;
+}
+.pre_invoice_wrapperDaywise label {
+  margin: 20px 15px 0 0px;
+  color: #277eff;
+  cursor: pointer;
+}
+.sightseeing_wrapper {
+  margin-top: 2px;
+}
+.addOptionToggle li {
+  margin: 0 40px 0 0px;
+}
+.addOptionToggle ul {
+  list-style: none;
+  padding: 15px;
+  display: inline-flex;
+  margin-bottom: 0px;
+}
+.addOptionToggle input[type=checkbox] {
+  width: 40px!important;
+  height: 40px!important;
+  position: relative;
+  opacity: 1!important;
+  top: 15px;
+  left: 10px;
+}
+.addOptionToggle {
+  position: relative;
+  background-color: #ddd;
+  width: 100%;
+  display: inline-block;
+}
+.addOptionToggle .checkbox {
+  text-align: center;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.addOptionToggle input[type="checkbox"] {
+  top: 5px;
+  width: 30px!important;
+  height: 30px!important;
+  position: relative!important;
+  opacity: 1!important;
+}
+.image-choose {
+  border: 1px solid #ddd;
+  height: 100px;
+  border-radius: 4px;
+}
+.day-wrapper .sightseeing_wrapper textarea {
+  margin-top: 2px !important;
+}
+.image-choose input {
+  opacity: 0;
+  height: 100px;
+  position: relative;
+  z-index: 99;
+}
+.day-image-wrapper p {
+  margin-top: 70px;
+}
+.calculate-wrapper {
+  text-align: right;
+}
+.calculate-wrapper button {
+  margin-right: 3px;
+}
+.submit-btn {
+  margin: 0 auto;
+}
+.submit-btn button {
+  width: 200px;
+  padding: 20px 15px;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+  border: none;
+  box-shadow: 0px 9px 14px -11px rgba(0,0,0,0.75);
+  font-size: 1rem !important;
+  cursor: pointer;
+  color: #004085;
+}
+.submit-btn button:hover {
+  box-shadow: none;
+}
+/* Hide the browser's default checkbox */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* The container */
+.radio-box {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radiomark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-box:hover input ~ .radiomark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-box input:checked ~ .radiomark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radiomark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-box input:checked ~ .radiomark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-box .radiomark:after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+
+}
+
+.iP {
+  display: none;
+}
+
+.success + .iP {
+  display: block;
+  clear: both;
+  margin-bottom: 40px;
+}
+
+.pre_invoice_wrapper {
+  margin: 20px 0 40px;
+  float: right;
+  color: #277eff;
+  cursor: pointer;
+}
+
+.itinerary_manager .col-sm-6 {
+  float: left;
+}
+.totaldays { width: 48.7%;}
+
+.drag-wrapper {
+  clear: both;
+}
+.drag-wrapper .col-sm-1 {
+  float: left;
+  padding-right: 0;
+}
+.drag-wrapper .col-sm-11 {
+  float: right;
+}
+.sightseeing_block .col-sm-4 {
+  float: left;
+}
+.sightseeing_block.sightseeingTwoClose, .sightseeing_block.sightseeingThreeClose, .sightseeing_block.sightseeingFourClose, .sightseeing_block.sightseeingFiveClose, .sightseeing_block.sightseeingSixClose, .sightseeing_block.sightseeingSavenClose, .sightseeing_block.sightseeingEightClose, .sightseeing_block.sightseeingNineClose, .sightseeing_block.sightseeingTenClose, .sightseeing_block.sightseeing11Close, .sightseeing_block.sightseeing12Close, .sightseeing_block.sightseeing13Close, .sightseeing_block.sightseeing14Close, .sightseeing_block.sightseeing15Close, .sightseeing_block.sightseeing16Close, .sightseeing_block.sightseeing17Close, .sightseeing_block.sightseeing18Close, .sightseeing_block.sightseeing19Close, .sightseeing_block.sightseeing20Close {
+  display: none;
+}
+.sightseeing_wrapper label.checkbox {
+  text-align: right;
+  color: chocolate;
+  cursor: pointer;
+}
+.sightseeing_wrapper label.checkbox input[type="checkbox"] {
+  width: 120px;
+  height: 20px;
+  opacity: 0;
+  position: relative;
+  top: 5px;
+  left: -10px;
+  margin-left: -105px;
+  background-color: #fff !important;
+}
+.padding-remove {
+  padding: 0;
+}
+.day1 {
+  position: relative;
+  top: 2px;
+  left: 0;
+}
+.day1, .day2, .day3, .day4, .day5 {
+  height: 40px;
+  width: 140px;
+  padding: 6px;
+  text-align: center;
+  background: crimson;
+  color: #fff;
+  position: relative;
+  top: 2px;
+  left: 0;
+}
+
+.days:before {
+  content: "";
+  position: absolute;
+  right: -20px;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 20px solid crimson;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.days:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 10px solid white;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.itinerary_manager {
+  margin-top: 30px;
+}
+
+.example-list {
+  max-width: 100%;
+  min-height: 60px;
+  display: block;
+  background: white;
+  overflow: hidden;
+}
+
+.example-box {
+  padding: 20px 10px;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  display: flow-root;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.mydrag {
+  width: 48%;
+  float: left;
+  margin: 9px;
+}
+.drap-text {
+  display: block;
+  margin: 10px;
+  width: 80%;
+  float: left;
+}
+.drap-image {
+  width: 16.5%;
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 15px;
+  margin: 10px 0;
+  height: 100px;
+  text-align: center;
+}
+.invoice_number table input {
+  height: 25px !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.invoice_company_details td input {
+  padding: 0;
+  height: 21px;
+  border: none;
+  outline: none !important;
+  background-color: #fff;
+  font-size: 14px;
+}
+
+.invoice_company_details td input:focus {
+  box-shadow: none !important;
+}
+
+.itinerary_wrapper {
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 30px 0;
+}
+
+.itinerary_wrapper .control-label {
+  padding-top: 7px;
+  margin-bottom: 0;
+  text-align: right;
+  display: block;
+}
+
+.itinerary_wrapper .form-group {
+  display: -webkit-box;
+}
+.day-wrapper textarea {
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+.day-wrapper .col-sm-9 {
+  float: left;
+}
+.day-wrapper .col-sm-3 {
+  float: right;
+}
+.transportation-wrapper .col-sm-6.pull-left {
+  float: left;
+  margin-bottom: 15px;
+}
+.transportation-wrapper .col-sm-6.pull-right {
+  float: right;
+  margin-bottom: 15px;
+}
+.day-wise-plan label.pre_invoice_wrapper {
+  text-align: right;
+  display: inline-block;
+  width: 100%;
+  margin: 10px 15px;
+}
+
+.add-hotel h5 {
+  padding: 20px 0 4px;
+  font-size: 14px;
+  clear: both;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 20px;
+  width: 96.5%;
+  margin-left: 15px;
+}
+.transportation-wrapper h5 {
+  padding: 20px 0 4px;
+  font-size: 14px;
+}
+.add-hotel textarea {
+  resize: none;
+}
+.add-hotel .col-sm-6.pull-left {
+  float: left;
+  margin-bottom: 15px;
+}
+.add-hotel .col-sm-6.pull-right{
+  float: right;
+  margin-bottom: 15px;
+}
+.meal-food-checkbox .col-sm-3 {
+  width: 20%;
+  float: left;
+  z-index: 1;
+}
+.day-wise-sub-wrapper {
+  display: inherit;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-top-color: #ddd;
+}
+.day-wise-sub-wrapper .mat-tab-body-wrapper {
+  padding: 15px;
+}
+.day-wise-sub-wrapper mat-tab-header.mat-tab-header {
+  margin-bottom: 20px;
+}
+.day-image-wrapper {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 4px;
+  height: 177px;
+}
+.day-wrapper {
+  padding: 20px 10px;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  box-sizing: border-box;
+  clear: both;
+  background: white;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  display: flow-root;
+}
+.day-wise-plan {
+  margin: 30px 0;
+}
+.invoice_number {
+  width: 30%;
+}
+.invoice_customer_price table td input {
+  text-align: right;
+}
+.invoice_customer_price table {
+  margin-bottom: 2px;
+}
+.mat-tab-label-active, .mat-tab-label.mat-ripple.mat-tab-label-active.ng-star-inserted {
+  background-color: #ddd;
+  color: #000 !important;
+}
+.drag-wrapper .col-sm-1, .leftpadding0 {
+  padding-left: 0;
+}
+.drag-wrapper .col-sm-11, .rightpadding0 {
+  padding-right: 0;
+}
+.invoice_number .table td, .invoice_number .table th {
+  padding: 6px 10px;
+}
+
+.invoice_number  table {
+  margin: 30px 0 50px;
+  display: inline-table;
+}
+
+.invoice_number tr td:first-child {
+  background-color: #f5f5f5;
+}
+
+.invoice_number tr td:last-child {
+  text-align: right;
+}
+
+.invoice_customer_details {
+  width: 74%;
+  float: left;
+}
+
+.invoice_company_details td, .invoice_customer_details td, .invoice_customer_price td, .invoice_customer_price th {
+  padding: 8px;
+}
+.invoice_company_details label {
+  margin-bottom: 0 !important;
+}
+.invoice_customer_details td:last-child {
+  padding: 0 !important;
+}
+.invoice_customer_price td:first-child {
+  width: 300px;
+}
+.invoice_customer_details input, .invoice_customer_details input:focus, .invoice_customer_price input,.invoice_customer_price input:focus {
+  height: 37px !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+.invoice_customer_details textarea, .invoice_customer_details textarea:focus, .invoice_customer_price textarea, .invoice_customer_price textarea:focus {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  resize: none;
+}
+.invoice_customer_price textarea {
+  min-height: 60px !important;
+  height: 60px;
+  padding: 0;
+}
+.invoice_total_price tr:last-child {
+  background-color: #f5f5f5;
+}
+.invoice_customer_price {
+  padding: 20px 0;
+}
+.proforma_invoice {
+  padding: 30px 0;
+}
+.invoice_customer_price input {
+  padding: 0;
+}
+.invoice_total_price td {
+  padding: 8px;
+}
+.invoice_total_price td:last-child {
+  text-align: right;
+}
+.invoice_company_details {
+  width: 24.5%;
+  float: right;
+}
+
+.invoice_email {
+  width: 300px;
+  float: left;
+}
+
+.invoice_logo img {
+  width: 120px;
+  position: relative;
+  top: 40px;
+}
+
+.proforma_invoice .col-sm-12 {
+  clear: both;
+}
+.invoice_address {
+  width: 300px;
+  float: left;
+}
+.invoice_email {
+  padding-top: 33px;
+}
+.drap-reset {
+  position: relative;
+}
+
+.drap-reset label {
+  position: absolute;
+  top: 195px;
+  right: 13px;
+  right: 13px;
+  color: red;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.imagePreview {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.imagePreview>div {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.mat-form-field {
+  width: 675px !important;
+}
+
+.mat-select-panel-wrap .mat-select-panel {
+margin-top: 75px;
+}
+.mat-select-panel input.search{
+  padding:5px; width: 500px;
+}

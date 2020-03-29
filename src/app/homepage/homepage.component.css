@@ -1,0 +1,282 @@
+@import 'https://fonts.googleapis.com/css?family=Montserrat|Open+Sans';
+.navbar-brand {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase
+}
+
+.navbar .nav {
+  font-family: 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 1.2rem
+}
+
+.navbar-inverse .navbar-nav>.active>a,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-inverse .navbar-nav>.open>a:hover,
+.navbar-inverse .navbar-nav>.open>a:focus {
+  text-decoration: none;
+  color: #9d9d9d !important;
+  background-color: #fff;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav>li>a:hover {
+	color: #ff7b39 !important;
+}
+.readmore {
+  position: absolute;
+  color: #007bff;
+  bottom: 0;
+  padding: 5px 15px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  right: 0;
+}
+.readmore label {
+  margin-bottom: 0;
+  cursor: pointer;
+  font-size: 13px;
+}
+.dropdown-menu {
+  background-color: #006B00
+}
+.navbar-right {
+	margin-top: 15px;
+}
+
+.navbar-inverse .navbar-nav>.dropdown>a .caret {
+  border-top-color: #FFFFFF
+}
+
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+  border-top-color: #FFFFFF
+}
+
+.navbar-inverse .navbar-nav>.dropdown>a .caret {
+  border-bottom-color: #FFFFFF
+}
+
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret {
+  border-bottom-color: #FFFFFF
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a {
+    color: #000 !important;
+    font-weight: bold;
+}
+.parallax-nav {
+    min-height: 80px;
+    height: 80px;
+    margin-bottom: 0;
+    border-radius: 0;
+    box-shadow: 0px 0px 30px 0px;
+    background-color: #fff;
+    color: #000;
+    border: none;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
+    color: #9d9d9d !important;
+    background-color: #fff;
+	font-family: 'Open Sans', sans-serif;
+}
+
+/* Parallax Style Start */
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  margin-bottom: 40px;
+  font-size: 30px;
+  font-family: 'Open Sans', sans-serif;
+}
+section.module p {
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding: 40px 0;
+}
+section.module.parallax {
+  height: 450px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+section.module.parallax h1 {
+  color: rgba(65, 244, 255, 0.8);
+  line-height: 600px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.parallax-wrapper {
+    padding: 0 0;
+}
+section.module.parallax-3 {
+	background-image: url("https://holidaybazaar.s3-us-west-2.amazonaws.com/slider.jpg");
+	background-color: rgb(51, 51, 51);
+	background-size: cover;
+	padding-bottom: 50px;
+	background-attachment: fixed;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+/* Parallax Style END */
+
+.col-item .photo img {
+    margin: 0 auto;
+    width: 100%;
+    transition: 0.5s;
+}
+.col-item:hover {
+    background-image: linear-gradient(#dff2fe, white);
+    transition: 0.5s;
+}
+.col-item:hover img {
+    transform: scale3d(1.15, 1.15, 1);
+    transition: 0.5s;
+}
+.container.block-wrapper {
+    margin-bottom: 35px;
+}
+.container.block-wrapper .col-sm-4 {
+	margin-bottom: 15px;
+}
+.container.block-wrapper {
+    margin-top: 10px;
+}
+.col-item {
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    margin-bottom: 10px;
+    min-height: 360px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 35px 28px -34px rgba(0, 0, 0, 0.23);
+    transition: 0.5s;
+}
+.col-item .photo {
+    overflow: hidden;
+}
+.col-item .info {
+    padding: 10px;
+    border-radius: 0 0 5px 5px;
+    margin-top: 1px;
+}
+.col-item .info h4 {
+    font-weight: 600;
+    font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+}
+.col-item .info p {
+    color: #666;
+    font-size: 13px;
+	font-family: 'Open Sans', sans-serif;
+}
+.footer__topwrap {
+    background-color: #40424b;
+    padding: 20px 0;
+    box-sizing: border-box;
+    color: #fff;
+}
+.footer__topwrap--leftside {
+    display: inline-block;
+    width: 60%;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.footer__topwrap--rightside {
+    display: inline-block;
+    width: 40%;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.footer__topwrap--helphead {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 22px;
+	font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+.footer__topwrap--contacthead {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.footer__topwrap--detailbox {
+    background: #51545d;
+    padding: 20px;
+    border-radius: 3px;
+}
+.footer__topwrap--detailleft {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    vertical-align: top;
+    border-right: 1px solid #fff;
+	float: left;
+}
+.footer__topwrap--detailright {
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-left: 40px;
+}
+img {
+    max-width: 100%;
+}
+.footer-logo {
+    width: 150px;
+}
+.navbar-brand {
+    padding: 0;
+}
+.title-wrapper h3 {
+    margin: 40px 0 10px 0;
+}
+.navbar-brand img {
+	width: 116px;
+    margin: 8px 0 0 0;
+}
+section.module .footer__topwrap p {
+	font-size: 13px;
+	margin-bottom: 3px;
+	font-family: 'Open Sans', sans-serif;
+}
+.footer__mainWrap {
+    background-color: #2e2e34;
+    padding: 40px 0;
+    color: #fff;
+}
+.footer__topwrap--listhead {
+    color: #999;
+    font-weight: bold;
+    font-size: 13px;
+}
+.footer__topwrap--menuul {
+    width: 100%;
+    padding: 0;
+    list-style: none;
+}
+.footer__topwrap--menulist {
+    margin: 15px 0;
+}
+.footer__topwrap--anchor-link {
+    color: #fff;
+	text-decoration: none !important;
+}
+.footer__topwrap--anchor-link:hover {
+	color: #ff7b39;
+}

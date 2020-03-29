@@ -1,0 +1,144 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <!--
+<div *ngFor="let post of posts">
+  <p>Lead Title: {{ post.leadtitle }}</p>
+</div> -->
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="dashboard-wrapper">
+            <div class="col-sm-6">
+              <h5>Lead Details</h5>
+              <table class="table table-border table-hover">
+                <tbody>
+                  <tr>
+                    <td><a href="">All</a></td>
+                    <td><a href="">{{dashboard.Total || 0}}</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">New</a></td>
+                    <td><a href="">{{dashboard.New || 0}}</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Pending</a></td>
+                    <td><a href="">{{dashboard.Pending || 0}}</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">In Progress</a></td>
+                    <td><a href="">{{dashboard.InProgress || 0}}</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Confirmed</a></td>
+                    <td><a href="">{{dashboard.Confirmed || 0}}</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Completed</a></td>
+                    <td><a href="">{{dashboard.Completed || 0}}</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Canceled</a></td>
+                    <td><a href="">{{dashboard.Canceled || 0}}</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="col-sm-6">
+              <h5>Invoices / Proforma</h5>
+              <table class="table table-border table-hover">
+                <tbody>
+                  <tr>
+                    <td><a href="">Total Invoice</a></td>
+                    <td><a href="">0</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Generated (Not sent to customer)</a></td>
+                    <td><a href="">0</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Sent to Customer (Due)</a></td>
+                    <td><a href="">0</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Part Paid</a></td>
+                    <td><a href="">0</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Fully Paid</a></td>
+                    <td><a href="">0</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Canceled</a></td>
+                    <td><a href="">0</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="">Total Proforma Invoice</a></td>
+                    <td><a href="">0</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="daily-alert-wrapper">
+            <h5>Daily Analysis</h5>
+            <hr>
+            <div class="col-sm-4">
+              <div class="alert-content">
+                <div class="flip">
+                  <div class="card1">
+                    <div class="face front">
+                      <h5>Due payment Remember</h5>
+                    </div>
+                    <div class="face back">
+                      <h5>Click to view</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="alert-content">
+                <div class="flip">
+                  <div class="card1">
+                    <div class="face front">
+                      <h5>Hotel for Re-confirmation</h5>
+                    </div>
+                    <div class="face back">
+                      <h5>Click to view</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-4">
+              <div class="alert-content">
+                <div class="flip">
+                  <div class="card1">
+                    <div class="face front">
+                      <h5>Upcoming Tours</h5>
+                    </div>
+                    <div class="face back">
+                      <h5>Click to view</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br />
+<br />
+<br />
+<br />

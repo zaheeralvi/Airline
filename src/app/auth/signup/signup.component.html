@@ -1,0 +1,41 @@
+<div class="container">
+<div class="row">
+<div class="col-sm-12">
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="login-content" *ngIf="!isLoading">
+    <div class="col-sm-6">
+      <div class="content-login-block">
+         <h4>Welcome</h4>
+         <div class="welcome-note"></div>
+         <p>An essay is, generally, a piece of writing that gives the author's own argument — but the definition is vague, overlapping with those of a paper, an article, a pamphlet, and a short story.</p>
+         <button class="btn btn-default">Know more</button>
+      </div>
+    </div>
+    <div class="col-sm-6">
+        <!--Signup Form -->
+        <div class="content-login-block login-wrapper">
+
+            <h4>Signin</h4>
+            <div class="welcome-note"></div>
+            <form (submit)="onSignup(signup)" #signup = "ngForm">
+                <div class="form-group">
+                  <input type="email" name = "email" ngModel class="form-control" placeholder="Please enter Email" #emailInput="ngModel" required email>
+                  <p class="error-text" *ngIf="emailInput.invalid && (emailInput.touched || emailInput.dirty )">Please enter valid mail</p>
+                </div>
+                <div class="form-group">
+                  <input type="password" name = "password" ngModel class="form-control"  placeholder="Please enter Password" #passwordInput="ngModel" required>
+                  <p class="error-text" *ngIf="passwordInput.invalid && (passwordInput.touched || passwordInput.dirty)">Please enter valid Password</p>
+                </div>
+                <button type="submit" class="btn btn-primary" *ngIf="!isLoading">Signup</button>
+          </form>
+        </div>
+        <!--Signup End -->
+      </div>
+  </div>
+</div>
+</div>
+</div>
+<br />
+<br />
+<br />
+<br />

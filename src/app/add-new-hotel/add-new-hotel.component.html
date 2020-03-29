@@ -1,0 +1,476 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="backBTN" (click)="backToAddHotel()">Back</div>
+      <form [formGroup]="postForm" (ngSubmit)="onSaveHotel()">
+        <div class="add_new_hotel_wrapper">
+          <h5>Hotel Details</h5>
+          <div class="row">
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="lead-title">HOTEL NAME</label>
+                <input type="text" class="form-control" formControlName="addHotelName">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="lead-title">HOTEL STAR</label>
+                <input type="text" class="form-control" formControlName="addHotelRating">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="lead-title">CHECK IN*</label>
+                <input type="text" class="form-control" formControlName="addHotelCheckIN">
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="form-group">
+                <label for="lead-title">CHECK OUT*</label>
+                <input type="text" class="form-control" formControlName="addHotelCheckOut">
+              </div>
+            </div>
+            <div class="col-sm-3">
+              <div class="form-group">
+                <label for="lead-title">ADDRESS</label>
+                <input type="text" class="form-control" formControlName="addHotelAddress">
+              </div>
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="lead-title">Postal Code</label>
+              <input type="text" class="form-control" formControlName = "addHotelPostalCode">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label for="lead-title">Country</label>
+              <input type="text" class="form-control" formControlName = "addHotelCountry">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label for="lead-title">State</label>
+              <input type="text" class="form-control" formControlName = "addHotelState">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <label for="lead-title">City</label>
+              <input type="text" class="form-control" formControlName = "addHotelCity">
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="form-group">
+              <label for="lead-title">Website</label>
+              <input type="text" class="form-control" formControlName = "addHotelWebsite">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="form-group">
+              <label for="lead-title">DESCRIPTION</label>
+              <input type="text" class="form-control" formControlName = "addHotelDescription">
+            </div>
+          </div>
+        </div>
+        <h5>Hotel Images</h5>
+        <div class="row">
+          <div class="col-sm-2">
+            <div class="hotel-images">
+                <!-- <input type="file" class="form-control" accept=".png, .jpg, .jpeg"
+                (change)="uploadHotelImage($event)"> -->
+                <input type="file" formControlName="addHotelCoverImage" name="image" ng2FileSelect [uploader]="uploader" accept="image/x-png,image/gif,image/jpeg" (change)="uploader.uploadAll()"/>
+              </div>
+              <div class="imagePreview" *ngIf="imageUrl">
+                <div>
+                  <img [src]="imageUrl" class="contribution-image">
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <h5>Hotel Features</h5>
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="md-checkbox">
+              <input type="checkbox"><label>24 HOUR RECEPTION</label>
+            </div>
+            <div class="md-checkbox">
+              <input type="checkbox"><label>ATM / CASH MACHINE</label>
+            </div>
+             <div class="md-checkbox">
+              <input type="checkbox"><label>BALLROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BATH / HOT TUB</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BATHTUB/SHOWER COMBINATION</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BEACH SOCCER AND VOLLEYBALL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BICYCLE RENTAL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BOATING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BREAKFAST IN THE ROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CANOEING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CELL PHONE/MOBILE RENTAL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CLAY PIGEON SHOOTING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> COMPLIMENTARY TOILETRIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CONFERENCE MANAGER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CONVENTION CENTER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CRICKET PITCH</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>CYCLING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DESK</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DISABLED PARKING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DVD PLAYER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> EN SUITE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SPACE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>FACSIMILE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>FISHING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> FULL-SERVICE CATERING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GARDEN</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GOLF COURSE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GRAB BARS IN BATHROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> HIGHCHAIRS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>ICE MACHINE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> JET-SKI</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> KIDS CLUB</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> LAKE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> LAUNDRY SERVICE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MASSAGE OR BEAUTY CENTRE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MICROWAVE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MULTILINGUAL STAFF</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> NIGHTCLUBS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> OUTDOOR HEATED POOL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PERSONAL SHOPPER SERVICE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PICNIC AREA/TABLES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> POOL INDOOR</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PORTERS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PRIVATE TOILET</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> RESTAURANT</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SAFE-DEPOSIT BOX</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SCOOTER/MOPED RENTALS ARE AVAILABLE AT THE HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SHARED BATHROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SHOPS IN HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SMOKING ROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SPA BATH / JACUZZI</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SUPERVISED CHILD CARE/ACTIVITIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> TENNIS COURTS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> THERE IS AN AIRPORT SHUTTLE THAT RUNS FROM THE HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> TV</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> VIDEO CONFERENCING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> WATER ACTIVITIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> WINE TASTING</label>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="md-checkbox">
+              <input type="checkbox"><label>24 HOUR RECEPTION</label>
+            </div>
+            <div class="md-checkbox">
+              <input type="checkbox"><label>ATM / CASH MACHINE</label>
+            </div>
+             <div class="md-checkbox">
+              <input type="checkbox"><label>BALLROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BATH / HOT TUB</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BATHTUB/SHOWER COMBINATION</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BEACH SOCCER AND VOLLEYBALL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BICYCLE RENTAL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BOATING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BREAKFAST IN THE ROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CANOEING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CELL PHONE/MOBILE RENTAL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CLAY PIGEON SHOOTING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> COMPLIMENTARY TOILETRIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CONFERENCE MANAGER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CONVENTION CENTER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CRICKET PITCH</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>CYCLING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DESK</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DISABLED PARKING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DVD PLAYER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> EN SUITE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SPACE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>FACSIMILE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>FISHING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> FULL-SERVICE CATERING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GARDEN</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GOLF COURSE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GRAB BARS IN BATHROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> HIGHCHAIRS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>ICE MACHINE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> JET-SKI</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> KIDS CLUB</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> LAKE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> LAUNDRY SERVICE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MASSAGE OR BEAUTY CENTRE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MICROWAVE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MULTILINGUAL STAFF</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> NIGHTCLUBS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> OUTDOOR HEATED POOL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PERSONAL SHOPPER SERVICE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PICNIC AREA/TABLES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> POOL INDOOR</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PORTERS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PRIVATE TOILET</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> RESTAURANT</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SAFE-DEPOSIT BOX</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SCOOTER/MOPED RENTALS ARE AVAILABLE AT THE HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SHARED BATHROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SHOPS IN HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SMOKING ROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SPA BATH / JACUZZI</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SUPERVISED CHILD CARE/ACTIVITIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> TENNIS COURTS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> THERE IS AN AIRPORT SHUTTLE THAT RUNS FROM THE HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> TV</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> VIDEO CONFERENCING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> WATER ACTIVITIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> WINE TASTING</label>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="md-checkbox">
+              <input type="checkbox"><label>24 HOUR RECEPTION</label>
+            </div>
+            <div class="md-checkbox">
+              <input type="checkbox"><label>ATM / CASH MACHINE</label>
+            </div>
+             <div class="md-checkbox">
+              <input type="checkbox"><label>BALLROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BATH / HOT TUB</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BATHTUB/SHOWER COMBINATION</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>BEACH SOCCER AND VOLLEYBALL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BICYCLE RENTAL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BOATING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> BREAKFAST IN THE ROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CANOEING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CELL PHONE/MOBILE RENTAL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CLAY PIGEON SHOOTING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> COMPLIMENTARY TOILETRIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CONFERENCE MANAGER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CONVENTION CENTER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> CRICKET PITCH</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>CYCLING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DESK</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DISABLED PARKING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>DVD PLAYER</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> EN SUITE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SPACE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>FACSIMILE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>FISHING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> FULL-SERVICE CATERING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GARDEN</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GOLF COURSE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>GRAB BARS IN BATHROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> HIGHCHAIRS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label>ICE MACHINE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> JET-SKI</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> KIDS CLUB</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> LAKE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> LAUNDRY SERVICE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MASSAGE OR BEAUTY CENTRE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MICROWAVE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> MULTILINGUAL STAFF</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> NIGHTCLUBS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> OUTDOOR HEATED POOL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PERSONAL SHOPPER SERVICE</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PICNIC AREA/TABLES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> POOL INDOOR</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PORTERS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> PRIVATE TOILET</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> RESTAURANT</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SAFE-DEPOSIT BOX</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SCOOTER/MOPED RENTALS ARE AVAILABLE AT THE HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SHARED BATHROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SHOPS IN HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SMOKING ROOM</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SPA BATH / JACUZZI</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> SUPERVISED CHILD CARE/ACTIVITIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> TENNIS COURTS</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> THERE IS AN AIRPORT SHUTTLE THAT RUNS FROM THE HOTEL</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> TV</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> VIDEO CONFERENCING</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> WATER ACTIVITIES</label>
+            </div><div class="md-checkbox">
+              <input type="checkbox"><label> WINE TASTING</label>
+            </div>
+          </div>
+
+        </div>
+
+          <div class="row">
+            <div class="col-sm-12 addhotel_buttons">
+              <button type="submit" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-default">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

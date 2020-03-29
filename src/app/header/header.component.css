@@ -1,0 +1,170 @@
+.navbar {
+  position: relative;
+  min-height: 50px;
+}
+.navbar-header {
+  float: left;
+}
+.navbar-nav {
+  float: left;
+  margin: 0;
+}
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navbar-right {
+  float: right!important;
+  margin-right: -15px;
+}
+.navbar>.container-fluid .navbar-brand {
+  margin-left: -15px;
+}
+.navbar-inverse .navbar-brand {
+  color: #9d9d9d;
+}
+
+.navbar-nav>li {
+  float: left;
+}
+
+nav.navbar {
+  display: block;
+  background-color: #ddd;
+  padding: 10px 30px;
+  height: 80px;
+  margin-bottom: 0;
+  border-radius: 0;
+  box-shadow: 0px 0px 34px -16px;
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+.navbar-brand {
+  float: left;
+  padding-left: 0;
+}
+img.header-logo {
+  width: 120px;
+  position: relative;
+  top: -10px;
+  margin-right: 50px;
+}
+.nav>li {
+  position: relative;
+  display: block;
+  color: #fff;
+  cursor: pointer;
+}
+.navbar-nav>li>a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.menu-wrapper nav.navbar {
+  display: block;
+  width: 100%;
+}
+.navbar-nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+  color: #000;
+  font-size: 13px;
+}
+.nav>li>a {
+  position: relative;
+  display: block;
+  padding: 15px;
+}
+ul.nav.navbar-nav {
+  padding-top: 5px;
+}
+.navbar-nav>li {
+  float: left;
+}
+.glyphicon {
+  position: relative;
+  top: -1px;
+  display: inline-block;
+  font-family: "Glyphicons Halflings";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.glyphicon-user:before {
+  content: "";
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/singUp.png);
+  padding: 3px 12px;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  background-position: 4px 1px;
+}
+.glyphicon-log-in:before {
+  content: "";
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/login1.png);
+  padding: 4px 15px;
+  background-repeat: no-repeat;
+  background-size: 22px;
+  border-radius: 50px;
+  background-position: 4px 1px;
+}
+.dynamic-template .glyphicon-log-in:before {
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/login.png) !important;
+  border: 1px solid #fff;
+  padding: 6px 13px;
+  background-size: 18px;
+  position: relative;
+  left: -5px;
+}
+ul.nav.navbar-nav {
+  display: inline-block;
+}
+.navbar {
+  position: relative;
+  display: inline;
+  flex-wrap: initial;
+  align-items: initial;
+  justify-content: center;
+  padding: 0;
+}
+
+.dropdownshow ul.dropdown-menu {
+  display: block;
+  position: absolute;
+}
+
+li.dropdown:hover ul.dropdown-menu {
+  display: block;
+  position: absolute;
+}
+
+li.dropdown ul.dropdown-menu {
+  border-radius: 2px;
+  top: 35px;
+  width: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+li.dropdown ul.dropdown-menu li a {
+  color: #007bff !important;
+  font-size: 14px;
+  text-decoration: none !important;
+  display: block;
+  padding: 5px 10px;
+  box-shadow: 1px 7px 11px -7px #ddd;
+}
+
+li.dropdown ul.dropdown-menu li a:hover {
+  background-color: #007bff !important;
+  color: #fff !important;
+}

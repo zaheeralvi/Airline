@@ -1,0 +1,198 @@
+<div class="pdf-page">
+
+    <div class="proforma_invoice">
+            <div class="col-sm-12">
+                <div class="invoice_address">
+                <h5>Holiday Bazaar</h5>
+                <p>Himayat Nagar Main Road, <br/> Hyderabad. <br /> Hyderabad - 500029, <br/> Telangana, INDIA</p>
+                </div>
+                <div class="invoice_email">
+                    <label>0885 513 151</label>
+                    <p><a href="">admin@holidaybazaar.co</a> <br/> <a href="">http://holidaybazaar.co/</a></p>
+                </div>
+                <div class="invoice_logo">
+                    <img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/logo.jpg" />
+                </div>
+            </div>
+            <h3 class="pdftitle">Invoice</h3>
+            <div class="col-sm-12">
+                <div class="invoice_number">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Invoice#</td>
+                                <td><input type="text" class="form-control" [ngModel] = "post?.invoicenumber" name="invoicenumber" #invoicenumber="ngModel" style="text-align: left;" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Date</td>
+                                <td> <input type="date" class="form-control" style="text-align: left;" [ngModel] = "post?.invoicedate" name="invoicedate" #invoicedate="ngModel" readonly> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="payment_mode">
+                    <label>Payment Mode:</label>
+                    <p>Cheque / NEFT / RTGS / Payment Gateway</p>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="customer_address">
+                    <label>Bill To:</label>
+                    <textarea class="form-control"  rows="5" placeholder="Please enter customer address" [ngModel] = "post?.invoiceAddress" #invoiceAddress="ngModel" name="invoiceAddress" readonly></textarea>
+                </div>
+                <!--
+                <div class="invoice_customer_details">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td rowspan="4">
+                                    <textarea class="form-control"  rows="5" placeholder="Please enter customer address" [ngModel] = "post?.invoiceAddress" #invoiceAddress="ngModel" name="invoiceAddress"></textarea>
+                                </td>
+                                <td>State Code:</td>
+                                <td><input type="text" class="form-control" placeholder="Please enter state code" [ngModel] = "post?.invoiceStateCode" #invoiceStateCode="ngModel" name="invoiceStateCode"></td>
+                            </tr>
+                            <tr>
+                                <td>PAN No:</td>
+                                <td><input type="text" class="form-control" placeholder="Please enter customer PAN" [ngModel] = "post?.invoiceCustmerPAN" #invoiceCustmerPAN="ngModel"  name="invoiceCustmerPAN"></td>
+                            </tr>
+                            <tr>
+                               <td>GSTIN:</td>
+                                <td><input type="text" class="form-control" placeholder="Please enter customer GSTIN" [ngModel] = "post?.invoiceCustomerGSTIN" #invoiceCustomerGSTIN="ngModel" name="invoiceCustomerGSTIN"></td>
+                            </tr>
+                            <tr>
+                                <td>Supply At:</td>
+                                <td><input type="text" class="form-control" placeholder="Please enter location" [ngModel] = "post?.invoiceSupply" #invoiceSupply="ngModel" name="invoiceSupply"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="invoice_company_details">
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr>
+                                <td colspan="2"><label> Seller GST Details</label></td>
+                            </tr>
+                            <tr>
+                                <td>GSTIN:</td>
+                                <td><input type="text" class="form-control" value="242 5617 954" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>CIN:</td>
+                                <td><input type="text" class="form-control" value="872 5617 954" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>PAN No:</td>
+                                <td><input type="text" class="form-control" value="ABCDF3420J" readonly></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                -->
+            </div>
+            <div class="col-sm-12">
+                <div class="invoice_customer_price">
+                <div class="table1">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td>Particulars</td>
+                                    <td>Rate (INR)</td>
+                                    <td>Quantity</td>
+                                    <td>Discount</td>
+                                    <td>GST(%)</td>
+                                    <td>HSN/SAC</td>
+                                    <td>Amount (INR)</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <textarea [ngModel] = "post?.invoicecomment1" #invoicecomment1="ngModel" name="invoicecomment1" class="form-control"  rows="3" placeholder="Please write you description" readonly></textarea>
+                                    </td>
+                                    <td><input type="text" class="form-control" id="invoiceRate1" (change)="addValues()" name = "invoiceRate1" [ngModel] = "post?.invoiceRate1" #invoiceRate1="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceQuantity1" (change)="addValues()" name = "invoiceQuantity1" [ngModel] = "post?.invoiceQuantity1" #invoiceQuantity1="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceDiscount1" (change)="addValues()" name = "invoiceDiscount1" [ngModel] = "post?.invoiceDiscount1" #invoiceDiscount1="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceGST1"  (change)="addValues()" name = "invoiceGST1" [ngModel] = "post?.invoiceGST1" #invoiceGST1="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceHSN1" (change)="addValues()" name = "invoiceHSN1" [ngModel] = "post?.invoiceHSN1" #invoiceHSN1="ngModel" readonly></td>
+                                    <td><label style="text-align: right; display: block;">{{ total1 | number:'.1'}}</label></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <textarea [ngModel] = "post?.invoicecomment2" #invoicecomment2 = "ngModel" name="invoicecomment2" class="form-control"  rows="3" placeholder="Please write you description" readonly></textarea>
+                                    </td>
+                                    <td><input type="text" class="form-control" id="invoiceRate2" (change)="addValues()" name = "invoiceRate2" [ngModel] = "post?.invoiceRate2" #invoiceRate2="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceQuantity2" (change)="addValues()" name = "invoiceQuantity2" [ngModel] = "post?.invoiceQuantity2" #invoiceQuantity2="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceDiscount2" (change)="addValues()" name = "invoiceDiscount2" [ngModel] = "post?.invoiceDiscount2" #invoiceDiscount2="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceGST2" (change)="addValues()" name = "invoiceGST2" [ngModel] = "post?.invoiceGST2" #invoiceGST2="ngModel" readonly></td>
+                                    <td><input type="text" class="form-control" id="invoiceHSN2" (change)="addValues()" name = "invoiceHSN2" [ngModel] = "post?.invoiceHSN2" #invoiceHSN2="ngModel" readonly></td>
+                                    <td><label style="text-align: right; display: block;">{{ total2 | number:'.1-2' }}</label></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="invoice_total_price">
+                    <div class="">
+
+                        <div class="">
+                                <table class="table table-bordered">
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="6" style="width: 70%;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Subtotal:</td>
+                                            <td style="min-width: 40px;">{{ subtotal | number:'.1-2' }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>CGST (+) 5%:</td>
+                                            <td style="min-width: 40px;">{{ invoiceCGST | number:'.1-2' }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>SGST (+) 8%:</td>
+                                            <td style="min-width: 40px;"> {{  invoiceSGST | number:'.1-2' }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>IGST (+) 6%:</td>
+                                            <td style="min-width: 40px;">{{  invoiceIGST | number:'.1-2' }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Grand Total:</td>
+                                            <td style="min-width: 40px;">{{ invoiceGrandTotal | number:'.1-2' }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+            <div class="col-sm-12">
+                <div class="invoice_billing_note">
+                    <label>Billing Notes</label>
+                    <textarea class="form-control" placeholder="Please enter billing note" rows="5" [ngModel] = "post?.invoiceBilling" #invoiceBilling="ngModel" name="invoiceBilling"></textarea>
+                </div>
+            </div>
+            -->
+            <div class="col-sm-12">
+                <div class="invice_declaration">
+                    <label>Declaration</label>
+                    <p> we declare that this invoice shows the actual price of the goods or service described and that all particulars are true and correct.</p>
+                </div>
+                <div class="terms-conditions">
+                    <p><i>Terms and Conditions*</i></p>
+                </div>
+            </div>
+        </div>
+</div>
+
+<div class="mypdf">
+    <button (click) = "sumValue()">Update the Data</button>
+    <button (click) = "backToLeadView()" class="">Lead View Page</button>
+    <button (click) = "backToCreateLead()" class="" >Create New Lead </button>
+    <button (click) = "downloadInvoicePDF()" class="downloadPDF" [disabled]="currentLesson">Download</button>
+</div>

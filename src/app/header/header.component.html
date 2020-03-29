@@ -1,0 +1,42 @@
+<div class="menu-wrapper">
+  <nav class="navbar" [ngClass]="userIsAuthenticated?'dynamic-template':'static-template'">
+    <div class="navbar-header">
+      <a *ngIf = "!userIsAuthenticated" routerLink="/" routerLinkActive="router-link-active" class="navbar-brand"> <img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/logo.png" class="header-logo" alt="logo"></a>
+      <a *ngIf = "userIsAuthenticated" routerLink="/dashboard" routerLinkActive="router-link-active" class="navbar-brand"> <img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/logo.png" class="header-logo" alt="logo"></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/internationalproduct" routerLinkActive="router-link-active">International</a></li>
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/domesticproduct" routerLinkActive="router-link-active">Domestic</a></li>
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/cruiseproducts" routerLinkActive="router-link-active">Cruise</a></li>
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/airline/search" routerLinkActive="router-link-active">Airline</a></li>
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/product" routerLinkActive="router-link-active">Service</a></li>
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/contact" routerLinkActive="router-link-active">Contact US</a></li>
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/aboutus" routerLinkActive="router-link-active">About US</a></li>
+
+      <li *ngIf = "userIsAuthenticated"><a routerLink="/dashboard" routerLinkActive="router-link-active">Dashboard</a></li>
+      <li *ngIf = "userIsAuthenticated"><a routerLink="/create" routerLinkActive="router-link-active">Create Lead</a></li>
+      <li *ngIf = "userIsAuthenticated"><a routerLink="/viewlead" routerLinkActive="router-link-active">View Lead</a></li>
+      <li class="dropdown" *ngIf = "userIsAuthenticated">
+        <a a routerLinkActive="router-link-active" class="dropdown-toggle" data-toggle="dropdown">My Itinerary <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a>Customised Itinerary</a></li>
+          <li><a>Group Itinerary</a></li>
+        </ul>
+      </li>
+      <li *ngIf = "userIsAuthenticated"><a routerLinkActive="router-link-active">Travel Flyer</a></li>
+      <li class="dropdown" *ngIf = "userIsAuthenticated">
+        <a a routerLinkActive="router-link-active" class="dropdown-toggle" data-toggle="dropdown">Billing<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a>Proforma Invoice</a></li>
+          <li><a>Invoice</a></li>
+        </ul>
+      </li>
+      <li *ngIf = "userIsAuthenticated"><a routerLink="/addHotel" routerLinkActive="router-link-active">Hotel</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <!-- li *ngIf = "!userIsAuthenticated"><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li -->
+      <li *ngIf = "!userIsAuthenticated"><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
+      <li *ngIf = "userIsAuthenticated" (click)="onLogout()"><a><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+    </ul>
+  </nav>
+</div>

@@ -1,0 +1,610 @@
+/* The container */
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+/* On mouse-over, add a grey background color */
+.checkbox:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+/* The container */
+.radio-box {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-box input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radiomark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-box:hover input ~ .radiomark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-box input:checked ~ .radiomark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radiomark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-box input:checked ~ .radiomark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-box .radiomark:after {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+
+.pdf-page button {
+display: none
+}
+.downloadPDF {
+  display: block;
+  border: none;
+  background-color: transparent !important;
+  outline: none;
+  margin: 0 auto;
+  top: 30%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 50%;
+  width: 100%;
+}
+.image-brands-wrapper {
+  text-align: center;
+}
+.thankyou-wrapper h2 {
+  text-align: center;
+}
+.thankyou-wrapper h3 {
+  color: #9b9696;
+  margin: 70px 0 20px 15px;
+}
+.image-brands-wrapper img {
+  max-width: 100%;
+  width: 120px;
+  margin: 15px;
+}
+.header-logo-pdf {
+  width: 200px;
+  background-color: #fff;
+  padding: 15px;
+  position: relative;
+  top: 0;
+  -webkit-box-shadow: 10px 9px 14px -1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 9px 14px -1px rgba(0,0,0,0.75);
+  box-shadow: 10px 9px 14px -1px rgba(0,0,0,0.75);
+}
+.traportwrapper label {
+  margin-bottom: 0 !important;
+}
+.form-control {
+  border: none;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0;
+  background-color: transparent;
+}
+.traportationwrapper .traportwrapper {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #FFF;
+}
+.meal-food-checkbox img {
+  width: 20px;
+  margin-right: 4px;
+}
+.pdf-page {
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/london-eye.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 0px 0px;
+  height: 1520px;
+}
+.package-block1 {
+  background-color: rgba(100, 149, 237, 0.48);
+  padding: 15px;
+}
+.package-block1 .form-group {
+  margin-bottom: 0;
+}
+.package-block2 {
+  background-color: rgba(11, 205, 225, 0.83);
+  padding: 15px;
+}
+
+.title_package_b1 {
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 15px !important;
+  margin-top: 15px;
+}
+
+.package-block1 input {
+  font-size: 34px !important;
+  color: #fff;
+  display: block;
+}
+
+.checkbox label {
+  color: #fff;
+}
+
+.itineray_plan_wrapper label {
+  font-size: 24px !important;
+  color: #fff;
+}
+.package-block1 .itinerary_customer_name {
+  font-size: 34px !important;
+  color: yellow;
+}
+
+.itineray_plan_wrapper input {
+  font-size: 24px !important;
+  color: #fff;
+  padding: 0;
+  height: auto;
+}
+.itineray_plan_wrapper select {
+  font-size: 22px !important;
+  color: #fff !important;
+}
+.itineray_plan_wrapper .col-sm-3 label {
+  float: left;
+  font-size: 22px;
+  color: #fff;
+}
+.welcome-wrapper {
+  height: 1570px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+.welcome-wrapper p input {
+  padding: 0;
+  margin-left: 5px;
+  font-weight: 600;
+}
+.welcome-wrapper img {
+  margin-bottom: 100px;
+}
+.day_Wise_Plan_wrapper_ONE {
+  height: 1580px;
+  overflow: hidden;
+}
+.package-block-wrapper h4 {
+  font-size: 45px;
+  color: #fff;
+}
+.package-block-wrapper h4 span {
+  color: #ffc107;
+}
+.day_Wise_Plan_wrapper_ONE_title {
+  background-color: #277eff;
+  padding: 35px 15px 35px 15px;
+  color: #fff;
+  margin-top: 70px;
+}
+.traportationwrapper .transport_title_block {
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/bannerDay.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 230px;
+  background-color: #277eff;
+  padding: 75px 15px 35px 15px;
+  color: #fff;
+}
+.traportationwrapper .transport_title_block h1 {
+  font-size: 60px !important;
+  color: #fff !important;
+  margin-left: 0;
+  font-weight: 500;
+  line-height: 75px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.col- span {
+  font-size: 24px;
+  color: #fff;
+  margin-right: 10px;
+}
+.services_checkbox img {
+  width: 13px;
+  margin-right: 5px;
+}
+.services_checkbox label {
+  color: #fff;
+  font-size: 18px;
+}
+.day_Wise_Plan_wrapper_ONE_title h1 input, .day_Wise_Plan_wrapper_ONE_title h1 {
+  font-size: 60px !important;
+  color: #fff !important;
+  margin-left: 0;
+  font-weight: 500;
+  line-height: 75px;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.itineray_plan_wrapper .col-sm-9 {
+  float: left;
+  padding: 0;
+  display: flex;
+}
+select::-ms-expand {
+  display: none;
+}
+.traportwrapper label {
+  display: block;
+}
+.traportwrapper {
+  width: 47%;
+  padding: 0 30px 50px;
+  background-color: #fff8dc;
+  margin: 15px;
+  height: 1260px;
+  overflow: hidden;
+}
+.itineray_plan_wrapper {
+  padding: 10px 35px;
+}
+.terms_and_condition_title {
+  background-color: rgba(100, 149, 237, 0.9);
+  padding: 30px 15px 25px 15px;
+  color: #fff;
+}
+.terms_and_condition_title h1 {
+  font-size: 70px;
+  filter: drop-shadow(2px 4px 6px black);
+  line-height: 80px;
+}
+.terms_and_condition_wrapper {
+  height: 1580px;
+  margin-top: 30px;
+  overflow: hidden;
+}
+.package-block-wrapper {
+  margin: 30px;
+  position: relative;
+  top: 810px;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  margin: 0 10px;
+}
+
+.mypdf {
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.7682423311121324) 35%, rgba(0,212,255,1) 100%);
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(73,73,235,0.7682423311121324) 51%, rgba(0,212,255,1) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+textarea.form-control {
+  resize: none;
+  overflow: hidden;
+  border: 1px solid #007bff4f;
+  overflow: hidden;
+  padding: 10px;
+}
+.terms_and_condition_content .col-sm-6 {
+  width: 45%;
+  float: left;
+}
+.terms_and_condition_content .col-sm-6 p {
+  text-align: justify;
+}
+.terms_and_condition_content h5 {
+  font-weight: 500;
+  color: orange;
+}
+.meal-food-checkbox label span {
+  margin-right: 15px;
+}
+
+.Hotel_main {
+  width: 100%;
+}
+.meal_food_main {
+  width: 100%;
+}
+input {
+  margin: 0 !important;
+}
+.add-hotel .col-sm-6 {
+  padding: 0;
+}
+.day-wrapper {
+  padding: 20px 10px;
+  color: rgba(0, 0, 0, 0.87);
+  clear: both;
+  margin-bottom: 15px;
+  border-radius: 0 0 4px 4px;
+}
+.day-wrapper .col-sm-9 {
+  float: left;
+}
+.form-control {
+  border: none;
+  outline: 0!important;
+  box-shadow: none!important;
+  padding: 0;
+  background-color: transparent;
+}
+textarea.form-control {
+  resize: none;
+  overflow: hidden;
+  border: 1px solid #007bff4f;
+}
+.day-wrapper .col-sm-3 {
+  float: right;
+}
+.day-image-wrapper {
+  border: 1px solid #007bff4f;
+  border-radius: 4px;
+  padding: 4px;
+  height: 161px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.day-image-wrapper p {
+  margin-top: 65px;
+}
+
+.transportation-wrapper .col-sm-6.pull-left {
+  float: left;
+  margin-bottom: 15px;
+}
+.transportation-wrapper .col-sm-6.pull-right {
+  float: right;
+  margin-bottom: 15px;
+}
+
+.day-wise-sub-wrapper .col-sm-6 {
+  padding: 0;
+}
+.day-wise-sub-wrapper .col-sm-12 {
+  padding: 0;
+}
+.drag-wrapper .col-sm-1 {
+  padding-left: 0;
+}
+.drag-wrapper .col-sm-11 {
+  padding-right: 0;
+}
+.drag-wrapper .col-sm-1, .drag-wrapper .col-sm-11 {
+  float: left;
+}
+.hotel-details-block .col-sm-6.pull-right {
+  width: 100%;
+  float: none;
+}
+.hotel-details-block .col-sm-6.pull-left {
+  width: 100%;
+  float: none;
+}
+.add-hotel h5, .add-meal-food h5 {
+  font-size: 14px;
+  margin: 20px 0;
+  border-bottom: 1px solid #007bff4f;;
+}
+.meal-food-checkbox label, .meal-food-checkbox p {
+  color: #000;
+}
+.Hotel_main, .meal_food_main {
+  width: 100%;
+  float: none;
+  padding: 15px;
+}
+.meal-food-checkbox {
+  margin-bottom: 0;
+}
+.sightseeingtext img, .sightseeingImage img, .sightseeingyoutube img {
+  width: 15px;
+  margin-right: 5px;
+}
+.sightseeingtext img {
+  width: 13px;
+}
+.Transportation_main, .Hotel_main, .meal_food_main {
+  width: 33.33% !important;
+  float: left !important;
+  -webkit-box-shadow: 13px 0px 11px -16px rgba(0,0,0,1);
+  -moz-box-shadow: 13px 0px 11px -16px rgba(0,0,0,1);
+  box-shadow: 13px 0px 11px -16px rgba(0,0,0,1);
+}
+
+.Transportation_main {
+  padding: 15px;
+}
+.add-hotel .col-sm-6.pull-left, .add-hotel .col-sm-6.pull-right {
+  float: left;
+}
+
+.hello_explorer {
+  margin: 50px 0 100px;
+}
+.welcome_note p {
+  margin-bottom: 1.5rem;
+}
+.hello_explorer h1 span {
+  background-color: #b81717;
+  padding: 5px 20px;
+  margin-right: 15px;
+  color: #fff;
+}
+.days {
+  background-color: orange;
+  display: inline-block;
+  padding: 15px 25px;
+  color: #fff;
+  border-radius: 0 30px 30px 0px;
+  box-shadow: 7px 7px 6px -3px #000;
+  margin: 0px 0 15px;
+  position: relative;
+  left: -30px;
+}
+.days h5 {
+  margin-bottom: 0;
+}
+.day_Wise_Plan_wrapper_ONE h1 {
+  font-size: 60px;
+  line-height: 77px;
+}
+
+.day_Wise_Plan_wrapper_ONE_title {
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/bannerDay.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 230px;
+}
+.terms_and_condition_title {
+  /* background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/inclussions.png); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 230px;
+  background-color: #e7323c;
+}
+.hello_explorer h1 {
+  font-size: 120px;
+  color: orange;
+}
+.welcome_note span {
+  color: #277eff;
+  font-size: 24px;
+}
+.day-wrapper h5 {
+  color: #000;
+}
+.meal_food_main .checkbox .checkmark:after {
+  border: solid orange;
+}
+.meal-food-checkbox .col-sm-3 {
+  padding-left: 0;
+}
+select::-ms-expand {
+  display: none !important;
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+}
+.day-wise-sub-wrapper input.form-control {
+  height: 22px;
+}
+
+.add-meal-food .col-sm-3 {
+  width: 100% !important;
+  clear: both !important;
+  max-width: 100% !important;
+}

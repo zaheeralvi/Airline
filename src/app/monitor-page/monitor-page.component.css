@@ -1,0 +1,175 @@
+.alert-content {
+  position: relative;
+}
+.alert-content h5 {
+  font-size: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.daily-alert-wrapper {
+  position: fixed;
+  right: 15px;
+  bottom: 35px;
+}
+
+.alert-content button.btn.btn-info {
+  width: 248px;
+  height: 50px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -50px;
+}
+.card-style:hover {
+  box-shadow: none;
+}
+.flip {
+  -webkit-perspective: 800;
+}
+.card1 {
+  width: 250px;
+  border-radius: 10px;
+  padding: 14px;
+  float: left;
+  height: 50px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+.flip:hover {
+  background-color: red;
+  border-color: #b8daff;
+}
+.flip:hover  .card1{
+  -webkit-transform: rotatey(-180deg);
+  color: #0c5460;
+  background-color: #d1ecf1;
+}
+.flip .card1 {
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+.flip .card1 .front {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: #004085;
+
+}
+.flip .card1 .back {
+  -webkit-transform: rotatey(-180deg);
+  cursor: pointer;
+  color: #004085;
+}
+
+.tour-confirmation {
+  clear: both;
+}
+
+.card-style {
+  width: 261px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  margin-top: 1px;
+  margin-bottom: 50px;
+  float: left;
+  margin-right: 15px;
+  -webkit-box-shadow: 10px 10px 17px -14px rgba(0,0,0,0.63);
+  -moz-box-shadow: 10px 10px 17px -14px rgba(0,0,0,0.63);
+  box-shadow: 10px 10px 17px -14px rgba(0,0,0,0.63);
+}
+.mycard-header {
+  background-color: #115e8c;
+  color: #fff;
+  padding: 14px;
+  border-radius: 20px 20px 0 0px;
+  text-align: center;
+}
+
+.mycard-link a {
+  border-top: 1px solid #ddd;
+  color: #115e8c;
+  text-align: center;
+  border-radius: 0px 0px 20px 20px;
+  padding: 14px;
+  width: 100%;
+  display: inline-block;
+}
+.mycard-link a:after {
+  content: '';
+  background-size: 20px;
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/arrowBlue.png);
+  background-repeat: no-repeat;
+  background-position: 5px 0px;
+  width: 30px;
+  height: 20px;
+  position: absolute;
+}
+
+.mycard-body {
+  background-size: 90px;
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/enquiry.png);
+  padding: 70px 0;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  background-position: 85px 10px;
+}
+
+.card-orange .mycard-header {
+  background-color: #ff8f29;
+}
+.card-orange .mycard-link a {
+  color: #ff8f29;
+}
+
+.card-orange .mycard-link a:after{
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/arrowOrange.png);
+}
+
+.card-green .mycard-header {
+  background-color: #17c3d1;
+}
+.card-green .mycard-link a {
+  color: #17c3d1;
+}
+.card-green .mycard-link a:after{
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/arrowGreen.png);
+}
+
+.card-red .mycard-header {
+  background-color: #db4256;
+}
+.card-red .mycard-link a {
+  color: #db4256;
+}
+.card-red .mycard-link a:after{
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/arrowRed.png);
+}
+
+.card-purple .mycard-header {
+  background-color: #6f42c1;
+}
+.card-purple .mycard-link a {
+  color: #6f42c1
+}
+.card-purple .mycard-link a:after{
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/arrowParple.png);
+}
+
+.card-pink .mycard-header {
+  background-color: #e83e8c;
+}
+.card-pink .mycard-link a {
+  color: #e83e8c;
+}
+.card-pink .mycard-link a:after{
+  background-image: url(https://holidaybazaar.s3-us-west-2.amazonaws.com/arrowPink.png);
+}

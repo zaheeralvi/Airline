@@ -1,0 +1,47 @@
+.contact-us-wrapper {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.contact-us-wrapper  h3{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.contact-us-wrapper  .col-sm-4 {
+  float: left;
+}
+.contact-details p {
+  margin-bottom: 0;
+}
+h5.sub-title {
+  font-size: 16px;
+}
+.contact-details {
+  margin-bottom: 30px;
+}
+.our-partners {
+  margin-bottom: 50px;
+  display: flex;
+  border-top: 1px solid #ddd;
+    padding-top: 30px;
+
+}
+.our-partners .col-sm-2 {
+  float: left;
+  text-align: center;
+  clear: right;
+}
+
+.our-partners img {
+  width: 130px;
+}
+.our-partners .col-sm-2:after {
+  content: '';
+  background-color: #eee;
+  position: absolute;
+  right: 0;
+  padding: 1px;
+  height: 30px;
+  top: 30%;
+}

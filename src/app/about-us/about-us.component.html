@@ -1,0 +1,84 @@
+<div class="container-fluid prodcut-wrapper">
+  <div class="col-sm-12">
+    <div class="backToHomePage" style="margin-top: 30px;">
+      <label (click)="backToHome()"><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/arrow.jpg" class="product-img" alt="product-image">Back</label>
+    </div>
+  </div>
+</div>
+<br /><br />
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h5>About Us</h5>
+        <div class="description-about-us">
+          <p>
+           <strong>S.V. HOLIDAY BAZAAR PVT. LTD.</strong>is a leading end to end tour package provider and travel agency based in Hyderabad (INDIA). Formed in 2005, Holiday Bazaar has managed very swiftly and quickly to be a force to reckon with in the Travel Industry, more importantly because of its focus on Exceptional Customer Service.
+          </p>
+          <p>
+            Holiday is having vast experience in Travel & Hospitality and the logistics of it not only through our travels but also because of the number of guests’ we have assisted over the years’. The practical wisdom we have gained, helps us in addressing your needs and ensuring a seamless hassle-free tour.
+          </p>
+          <p>
+            Our unique selling proposition lies in our ability to deliver high quality, end-to-end tour packages, including Products, Services and Consulting to various organizations. Our solutions cater to large, mid-sized and small organizations apart from individuals. The Company runs on an efficient workforce of customer oriented staff whose main endeavor is to ensure you have <strong>“A Journey with Sweet Memories”.</strong>
+          </p>
+        </div>
+        <div class="about-us-wrapper" style="display: none;">
+         <div class="col-sm-4"><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/login1.png"></div>
+         <div class="col-sm-4"><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/sss.png"></div>
+         <div class="col-sm-4"><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/checkbox.jpg"></div>
+         <div class="col-sm-4"><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/download.png"></div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container-fluid aboutus-slider">
+    <div class="row">
+        <div class="col-sm-12">
+          <h5 style="padding: 0px 0 5px 0px;">Our Corporate Clientele</h5>
+          <div class="our-partners corporate-wrapper">
+            <app-corporate-slider></app-corporate-slider>
+            <angular-image-slider
+              [autoRotate]="true"
+              [autoRotateAfter]="5000"
+              [autoRotateRight]="true"
+              [images]="imagescorporate"
+            ></angular-image-slider>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container-fluid aboutus-slider">
+    <div class="row">
+        <div class="col-sm-12">
+          <h5 style="padding: 0px 0 5px 0px;">Our Educational Clientele</h5>
+          <div class="our-partners">
+            <app-corporate-slider></app-corporate-slider>
+            <angular-image-slider
+              [autoRotate]="true"
+              [autoRotateAfter]="5000"
+              [autoRotateRight]="true"
+              [images]="imagesUrl"
+            ></angular-image-slider>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <div class="container-fluid aboutus-slider">
+    <div class="row">
+        <div class="col-sm-12">
+          <h5 style="padding: 0px 0 5px 0px;">Our Association’s Clientele</h5>
+          <div class="our-partners">
+            <app-corporate-slider></app-corporate-slider>
+            <angular-image-slider
+              [autoRotate]="true"
+              [autoRotateAfter]="5000"
+              [autoRotateRight]="true"
+              [images]="imagesUrl"
+            ></angular-image-slider>
+          </div>
+        </div>
+    </div>
+  </div>
+
+<app-home-page-footer></app-home-page-footer>

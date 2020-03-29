@@ -1,0 +1,1596 @@
+<div class="container-fluid pdf-page-wrapper" style="padding-top: 30px;">
+  <div class="row">
+    <div class="col-sm-12">
+      <mat-accordion multi="false" >
+          <mat-expansion-panel class="open" *ngFor="let post of posts | filter:searchText">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                <h5>Lead Title: {{ post.leadtitle }}</h5> <br />
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="itineraryView" id="itineraryPDF">
+              <div class="pdfpage1 pdf-page-break pdfbanner">
+                <img [src]="post.itineraryImage" class="contribution-image">
+                <div class="pdflogo">
+                  <img alt="logo" class="header-logo-pdf" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/logo.png">
+                </div>
+                <div class="page1_content">
+                  <div class="package-block1">
+                    <div class="form-group">
+                      <h4>{{ post.itineraryTitle }}</h4>
+                      <h4>For <span>{{post.customerName}}</span></h4>
+                    </div>
+                  </div>
+                  <div class="package-block2">
+                    <div class="row">
+                      <div class="col-sm-5 itineray_plan_wrapper">
+                        <div class="row">
+                          <span>{{ post.itineraryNights }}</span>
+                          <div class="itinerary_spacer"></div>
+                          <label><span>INR - {{ post.itineraryBudgetCost }}/-</span> Package Cost</label>
+                          <div class="itinerary_spacer"></div>
+                          <label><span>{{ post.itineraryAdults }}</span>Adult</label>
+                          <div class="itinerary_spacer"></div>
+                          <label><span>{{ post.itineraryChild }}</span>Kids</label>
+                          <div class="itinerary_spacer"></div>
+                          <label>{{post.itineraryStartDate | date}} TO {{post.itineraryEndDate | date}}</label>
+                          <div class="itinerary_spacer"></div>
+                        </div>
+                       </div>
+                       <div class="col-sm-7 services_checkbox">
+                        <h4 style="margin: 10px 15px 15px;color: #fff;font-size: 24px;">Inclusion</h4>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="" *ngIf="post.itineraryAirfare == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Airfare" />Airfare</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryHotelStay == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Hotel Stay" />Hotel Stay</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryVisa == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Visa Fees" />Visa Fees</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itinerarySurcharge == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Surcharge" />Surcharge</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryGoodies == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Free Goodies" />Free Goodies</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryPassport == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Passport Fees" />Passport Fees</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryTourManager == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Tour Manager" />Tour Manager</label>
+                            </div>
+                            <div class="" *ngIf="post.itineraryTransport == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Internal Transportation" />Internal Transportation</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itinerarySightseeing == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Sightseeing" />Sightseeing</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryGovtTax == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Government Tax" />Government Tax</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryCruise == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="Cruise Stay" />Cruise Stay</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryAPAI == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="APAI - Stay & All Meals" />APAI - Stay & All Meals</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryCP == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="CP - Stay & Breakfast" />CP - Stay & Breakfast</label>
+                            </div>
+
+                            <div class="" *ngIf="post.itineraryMAP == 'true'">
+                              <label><img src="https://holidaybazaar.s3-us-west-2.amazonaws.com/rightmark.png" alt="MAP - Stay, Breakfast & Dinner" />MAP - Stay, Breakfast & Dinner</label>
+                            </div>
+                          </div>
+
+                        </div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              itineraryWelcome: = {{post.itineraryWelcome}}
+              <div class="pdfpage2 pdf-page-break" [ngClass]="{'focused': post.itineraryWelcome && post.itineraryWelcome.length > 0}">
+                <div class="welcome-wrapper">
+                  <br />
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                      <div class="hello_explorer">
+                        <h1><span>Hello</span>Explorer !!!</h1>
+                      </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="welcome_note welcomenote1" *ngIf="post.itineraryWelcome == 'welcomenote1'">
+                            <p>Dear Client <span>{{post.customerName}}</span></p>
+                            <p>Good day, and I hope you are well!</p>
+                            <p>Thank you for choosing Name of our company. Over the years, we have helped people create beautiful travel memories, just like we hope to do for you.</p>
+                            <p>After reviewing your preferences and the available options, we are proposing the below package which we believe best matches your requirements. Kindly review the attached, and feel free to propose any amendments as desired.</p>
+                            <p>It has been our pleasure to help you with your vacation arrangements, and we hope that it will bring you a wonderful holiday experience!</p>
+                        </div>
+                        <div class="welcome_note welcomenote2" *ngIf="post.itineraryWelcome == 'welcomenote2'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Good day to you!</p>
+                            <p>Thank you for giving us the opportunity for help you with your upcoming travel arrangements; it has been a pleasure for us.</p>
+                            <p>We have carefully reviewed your holiday preferences, and specially chosen the below package for you. Please review the information, and let us know if you would like to make any further changes to this plan.</p>
+                            <p>"Name of our company" has been helping travelers create wonderful holiday experiences for years, and we hope you will benefit in the same way. Here’s wishing you a beautiful vacation ahead!</p>
+                        </div>
+                        <div class="welcome_note welcomenote3" *ngIf="post.itineraryWelcome == 'welcomenote3'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Greetings from Name of our company</p>
+                            <p>Thank you for choosing our services. Name of our company has been helping our customers create beautiful travel memories for years, and we hope to do the same for you.</p>
+                            <p>For your best holiday experience, we would like to recommend the below package which fits your stated preferences. However, feel free to let us know if you would like to make amendments to the proposed,</p>
+                            <p>It has been our pleasure putting this together, and we hope this arrangement will make your vacation a wonderful one!</p>
+                        </div>
+                        <div class="welcome_note welcomenote4" *ngIf="post.itineraryWelcome == 'welcomenote4'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Good day, and we hope you are looking forward to your vacation because we bring good news! </p>
+                            <p>Based on the travel preferences that you have shared with us previously, we have carefully selected a package that is best suited for you. Please refer to the below for more information. We believe that this plan will fit your requirements, but feel free to propose any changes if you desire. </p>
+                            <p>Thank you very much for choosing Name of our company. Over the years we have helped thousands of travelers create wonderful memories, and our goal is to do the same for you. We hope you will enjoy this vacation as much as we did planning it for you!</p>
+                        </div>
+                        <div class="welcome_note welcomenote5" *ngIf="post.itineraryWelcome == 'welcomenote5'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Greetings from Name of our company, and we hope you are well! </p>
+                            <p>Thank you for choosing our service. After speaking with you, we started planning for your best holiday experience possible, and have carefully put together a package based on your specific preferences. Please refer to the below information, and let us know if you would like to make any further amendments. </p>
+                            <p>Name of our company has been helping to transform travelers overseas trips into unforgettable experiences for years, and our goal is to do the same for you. Here’s to a wonderful vacation ahead!</p>
+                        </div>
+                        <div class="welcome_note welcomenote6" *ngIf="post.itineraryWelcome == 'welcomenote6'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>We hope you are having a great week so far!</p>
+                            <p>Thank you for choosing our services – my team enjoyed planning your upcoming holiday. </p>
+                            <p>Based on what you discussed with us regarding your travel preferences, we have reviewed the suitable options for your best vacation experience. Please refer to the below package that we would like to recommend. We believe that this plan fits your requirements, but do feel free to suggest further changes as you see fit. </p>
+                            <p>Name of our company prides us in helping people create exciting holiday memories, and so it has been our pleasure to serve you. We trust you will have a blast on this vacation!</p>
+                        </div>
+                        <div class="welcome_note welcomenote7" *ngIf="post.itineraryWelcome == 'welcomenote7'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Greetings from Name of our company! We hope you are well.</p>
+                            <p>Since the last time we have spoken with you, my team has put together a plan for your upcoming holiday.</p>
+                            <p> Please refer to the proposed package below, which was carefully arranged according to your specific preferences. However, if you would like to propose any changes, feel free to let us know.</p>
+                            <p>Thank you for choosing to work with us. Name of our company has been helping our customers craft memorable travel experiences for years, and hope that you will find your upcoming holiday to be nothing short of amazing!</p>
+                        </div>
+                        <div class="welcome_note welcomenote8" *ngIf="post.itineraryWelcome == 'welcomenote8'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Howdy from Name of our company!</p>
+                            <p>Thank you for giving us the opportunity to plan your upcoming holiday, it has been a great pleasure for us!</p>
+                            <p>You will find below the package that we propose for your unique vacation experience. Based on the preferences that you have highlighted to us previously, we feel that this plan would be the best arrangement. However, if there are further changes that you would like to add, we will be happy to amend it.</p>
+                            <p>Over the years Name of our company has enjoyed helping thousands of people experience amazing holidays, and we aim to do the same for you. Here’s to an unforgettable trip ahead!</p>
+                        </div>
+                        <div class="welcomenote welcomenote9" *ngIf="post.itineraryWelcome == 'welcomenote9'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Good day to you!</p>
+                            <p>At Name of our company, we strive to create unforgettable overseas experiences for our customers, and that is why I am excited to share with you the plan we have put together for your upcoming holiday.</p>
+                            <p>Below is the package that we would like to recommend to you based on your travel preferences. We trust you will find that it fits your requirements, but we also welcome any changes that you might like to make.</p>
+                            <p>My team really enjoyed helping you plan this trip, and hope you that this will bring you on an exciting vacation with amazing memories!</p>
+                        </div>
+                        <div class="welcomenote welcomenote10" *ngIf="post.itineraryWelcome == 'welcomenote10'">
+                          <p>Dear Client <span>{{ post.customerName}}</span></p>
+                          <p>Good day, we hope you are well!</p>
+                            <p>It is our pleasure to share with you the plan for your upcoming holiday that we have specially put together. Based on your stated preferences, we would like to recommend the below package which we trust will provide you with the best travel experience.</p>
+                            <p>Please review the information, and feel free to propose any changes that you would like to see.</p>
+                            <p>Thank you for choosing Name of our company. For years we have been enhancing travelers overseas experiences, and we hope you will benefit from our expertise.</p>
+                            <p>My team wishes you an unforgettable vacation ahead!</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pdfpage3 pdf-page-break">
+                Daywise Plan
+              </div>
+              <p>transDepartDateDay1 :  = {{post.transDepartDateDay1}}</p>
+              <div class="pdfpage4 pdf-page-break traportationwrapper" [ngClass]="post.transDepartDateDay1 !== '' ? 'textAdded' : 'Notext'">
+                <div class="transport_title_block">
+                  <h1 >Transportation Details</h1>
+                </div>
+                <div class="transport_content_block">
+                  <div class="traportwrapper">
+                    <div class="transport-start-block" [ngClass]="post.transDepartDateDay1 !== '' ? 'textAdded' : 'Notext'">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                            <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay1 | date}}</h5>
+                        </div>
+                      </div>
+                      1 day
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay1 !==''">{{post.dayPlanDay1}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay1 !==''">{{post.transportModeDay1}} From {{post.transportTitleDay1}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay1 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay1 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay1 !== ''">{{post.transStartingPointtDay1}}, {{post.transDepartCityDay1}}, {{post.transDepartCountryDay1}}</label>
+                        <label *ngIf="post.transportModeDay1 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay1}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay1 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay1}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay1 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay1}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay1 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay1 }}, {{post.transArrivalCityDay1}}, {{ post.transArrivalCountryDay1 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay1 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay1}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay1 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay1}}</label>
+                      </div>
+                    </div>
+
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay1 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay1 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay1 !==''">{{post.returnTransportModeDay1}} From {{post.returnTransportTitleDay1}}</h4>
+                        <div class="col-sm-6">
+                          <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay1 !== ''">From: </label>
+                          <label  *ngIf="post.returnTransEndingPointtDay1 !==''">{{ post.returnTransEndingPointtDay1 }}, {{post.returnTransArrivalCityDay1}}, {{ post.returnTransArrivalCountryDay1 }}</label>
+                          <label *ngIf="post.returnTransportModeDay1 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay1}}</span></label>
+                          <label *ngIf="post.returnTransActualDepartureTimeDay1 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay1}}</span></label>
+                          <label *ngIf="post.returnTransReportingTimeDay1 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay1}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                          <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay1 !== ''">To: </label>
+                          <label *ngIf="post.returnTransStartingPointtDay1 !== ''" >{{post.returnTransStartingPointtDay1}}, {{post.returnTransDepartCityDay1}}, {{post.returnTransDepartCountryDay1}}</label>
+                          <label *ngIf="post.returnTransActualArrivalTimeDay1 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay1}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay1 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay1}}</label>
+                      </div>
+                    </div>
+                    <!-- Start Transportation Day2 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay2 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay2 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay2 !==''">{{post.dayPlanDay2}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay2 !==''">{{post.transportModeDay2}} From {{post.transportTitleDay2}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay2 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay2 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay2 !== ''">{{post.transStartingPointtDay2}}, {{post.transDepartCityDay2}}, {{post.transDepartCountryDay2}}</label>
+                        <label *ngIf="post.transportModeDay2 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay2}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay2 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay2}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay2 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay2}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay2 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay2 }}, {{post.transArrivalCityDay2}}, {{ post.transArrivalCountryDay2 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay2 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay2}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay2 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay2}}</label>
+                      </div>
+                    </div>
+                      <!-- END Transportation Day2 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay2 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay2 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay2 !==''">{{post.returnTransportModeDay2}} From {{post.returnTransportTitleDay2}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay2 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay2 !==''">{{ post.returnTransEndingPointtDay2 }}, {{post.returnTransArrivalCityDay2}}, {{ post.returnTransArrivalCountryDay2 }}</label>
+                        <label *ngIf="post.returnTransportModeDay2 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay2}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay2 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay2}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay2 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay2}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay2 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay2 !== ''" >{{post.returnTransStartingPointtDay2}}, {{post.returnTransDepartCityDay2}}, {{post.returnTransDepartCountryDay2}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay2 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay2}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay2 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay2}}</label>
+                      </div>
+                    </div>
+
+                    <!-- Start Transportation Day3 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay3 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay3 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay3 !==''">{{post.dayPlanDay3}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay3 !==''">{{post.transportModeDay3}} From {{post.transportTitleDay3}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay3 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay3 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay3 !== ''">{{post.transStartingPointtDay3}}, {{post.transDepartCityDay3}}, {{post.transDepartCountryDay3}}</label>
+                        <label *ngIf="post.transportModeDay3 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay3}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay3 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay3}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay3 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay3}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay3 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay3 }}, {{post.transArrivalCityDay3}}, {{ post.transArrivalCountryDay3 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay3 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay3}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay3 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay3}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day3 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay3 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay3 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay3 !==''">{{post.returnTransportModeDay3}} From {{post.returnTransportTitleDay3}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay3 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay3 !==''">{{ post.returnTransEndingPointtDay3 }}, {{post.returnTransArrivalCityDay3}}, {{ post.returnTransArrivalCountryDay3 }}</label>
+                        <label *ngIf="post.returnTransportModeDay3 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay3}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay3 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay3}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay3 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay3}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay3 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay3 !== ''" >{{post.returnTransStartingPointtDay3}}, {{post.returnTransDepartCityDay3}}, {{post.returnTransDepartCountryDay3}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay3 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay3}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay3 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay3}}</label>
+                      </div>
+                    </div>
+
+                    <!-- Start Transportation Day4 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay4 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay4 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay4 !==''">{{post.dayPlanDay4}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay4 !==''">{{post.transportModeDay4}} From {{post.transportTitleDay4}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay4 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay4 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay4 !== ''">{{post.transStartingPointtDay4}}, {{post.transDepartCityDay4}}, {{post.transDepartCountryDay4}}</label>
+                        <label *ngIf="post.transportModeDay4 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay4}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay4 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay4}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay4 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay4}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay4 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay4 }}, {{post.transArrivalCityDay4}}, {{ post.transArrivalCountryDay4 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay4 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay4}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay4 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay4}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day4 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay4 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay4 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay4 !==''">{{post.returnTransportModeDay4}} From {{post.returnTransportTitleDay4}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay4 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay4 !==''">{{ post.returnTransEndingPointtDay4 }}, {{post.returnTransArrivalCityDay4}}, {{ post.returnTransArrivalCountryDay4 }}</label>
+                        <label *ngIf="post.returnTransportModeDay4 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay4}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay4 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay4}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay4 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay4}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay4 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay4 !== ''" >{{post.returnTransStartingPointtDay4}}, {{post.returnTransDepartCityDay4}}, {{post.returnTransDepartCountryDay4}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay4 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay4}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay4 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay4}}</label>
+                      </div>
+                    </div>
+
+                    <!-- Start Transportation Day5 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay5 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay5 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay5 !==''">{{post.dayPlanDay5}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay5 !==''">{{post.transportModeDay5}} From {{post.transportTitleDay5}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay5 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay5 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay5 !== ''">{{post.transStartingPointtDay5}}, {{post.transDepartCityDay5}}, {{post.transDepartCountryDay5}}</label>
+                        <label *ngIf="post.transportModeDay5 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay5}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay5 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay5}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay5 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay5}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay5 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay5 }}, {{post.transArrivalCityDay5}}, {{ post.transArrivalCountryDay5 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay5 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay5}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay5 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay5}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day5 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay5 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay5 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay5 !==''">{{post.returnTransportModeDay5}} From {{post.returnTransportTitleDay5}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay5 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay5 !==''">{{ post.returnTransEndingPointtDay5 }}, {{post.returnTransArrivalCityDay5}}, {{ post.returnTransArrivalCountryDay5 }}</label>
+                        <label *ngIf="post.returnTransportModeDay5 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay5}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay5 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay5}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay5 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay5}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay5 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay5 !== ''" >{{post.returnTransStartingPointtDay5}}, {{post.returnTransDepartCityDay5}}, {{post.returnTransDepartCountryDay5}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay5 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay5}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay5 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay5}}</label>
+                      </div>
+                    </div>
+
+                    <!-- Start Transportation Day6 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay6 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay6 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay6 !==''">{{post.dayPlanDay6}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay6 !==''">{{post.transportModeDay6}} From {{post.transportTitleDay6}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay6 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay6 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay6 !== ''">{{post.transStartingPointtDay6}}, {{post.transDepartCityDay6}}, {{post.transDepartCountryDay6}}</label>
+                        <label *ngIf="post.transportModeDay6 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay6}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay6 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay6}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay6 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay6}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay6 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay6 }}, {{post.transArrivalCityDay6}}, {{ post.transArrivalCountryDay6 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay6 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay6}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay6 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay6}}</label>
+                      </div>
+                    </div>
+                    <!-- End Transportation Day6 -->
+                    <!-- Return Transportation Day6 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay6 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay6 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay6 !==''">{{post.returnTransportModeDay6}} From {{post.returnTransportTitleDay6}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay6 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay6 !==''">{{ post.returnTransEndingPointtDay6 }}, {{post.returnTransArrivalCityDay6}}, {{ post.returnTransArrivalCountryDay6 }}</label>
+                        <label *ngIf="post.returnTransportModeDay6 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay6}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay6 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay6}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay6 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay6}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay6 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay6 !== ''" >{{post.returnTransStartingPointtDay6}}, {{post.returnTransDepartCityDay6}}, {{post.returnTransDepartCountryDay6}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay6 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay6}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay6 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay6}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day6 END -->
+
+                    <!-- Start Transportation Day7 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay7 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay7 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay7 !==''">{{post.dayPlanDay7}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay7 !==''">{{post.transportModeDay7}} From {{post.transportTitleDay7}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay7 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay7 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay7 !== ''">{{post.transStartingPointtDay7}}, {{post.transDepartCityDay7}}, {{post.transDepartCountryDay7}}</label>
+                        <label *ngIf="post.transportModeDay7 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay7}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay7 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay7}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay7 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay7}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay7 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay7 }}, {{post.transArrivalCityDay7}}, {{ post.transArrivalCountryDay7 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay7 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay7}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay7 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay7}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day7 -->
+                    <!-- Return Transportation Day7 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay7 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay7 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay7 !==''">{{post.returnTransportModeDay7}} From {{post.returnTransportTitleDay7}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay7 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay7 !==''">{{ post.returnTransEndingPointtDay7 }}, {{post.returnTransArrivalCityDay7}}, {{ post.returnTransArrivalCountryDay7 }}</label>
+                        <label *ngIf="post.returnTransportModeDay7 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay7}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay7 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay7}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay7 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay7}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay7 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay7 !== ''" >{{post.returnTransStartingPointtDay7}}, {{post.returnTransDepartCityDay7}}, {{post.returnTransDepartCountryDay7}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay7 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay7}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay7 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay7}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day7 END -->
+
+                    <!-- Start Transportation Day8 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay8 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay8 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay8 !==''">{{post.dayPlanDay8}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay8 !==''">{{post.transportModeDay8}} From {{post.transportTitleDay8}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay8 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay8 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay8 !== ''">{{post.transStartingPointtDay8}}, {{post.transDepartCityDay8}}, {{post.transDepartCountryDay8}}</label>
+                        <label *ngIf="post.transportModeDay8 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay8}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay8 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay8}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay8 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay8}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay8 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay8 }}, {{post.transArrivalCityDay8}}, {{ post.transArrivalCountryDay8 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay8 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay8}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay8 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay8}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day8 -->
+                    <!-- Return Transportation Day8 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay8 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay8 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay8 !==''">{{post.returnTransportModeDay8}} From {{post.returnTransportTitleDay8}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay8 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay8 !==''">{{ post.returnTransEndingPointtDay8 }}, {{post.returnTransArrivalCityDay8}}, {{ post.returnTransArrivalCountryDay8 }}</label>
+                        <label *ngIf="post.returnTransportModeDay8 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay8}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay8 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay8}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay8 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay8}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay8 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay8 !== ''" >{{post.returnTransStartingPointtDay8}}, {{post.returnTransDepartCityDay8}}, {{post.returnTransDepartCountryDay8}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay8 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay8}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay8 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay8}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day8 END -->
+
+                    <!-- Start Transportation Day9 -->
+                   <div class="transport-start-block" *ngIf="post.transDepartDateDay9 !== ''">
+                    <div class="col-sm-12" style="padding-left: 0;">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay9 | date}}</h5>
+                      </div>
+                    </div>
+                    <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay9 !==''">{{post.dayPlanDay9}}</h4> -->
+                    <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay9 !==''">{{post.transportModeDay9}} From {{post.transportTitleDay9}}</h4>
+                    <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay9 !==''"></div> -->
+                    <div class="col-sm-6" style="float: left;">
+                      <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay9 !== ''">From: </label>
+                      <label *ngIf="post.transStartingPointtDay9 !== ''">{{post.transStartingPointtDay9}}, {{post.transDepartCityDay9}}, {{post.transDepartCountryDay9}}</label>
+                      <label *ngIf="post.transportModeDay9 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay9}}</span></label>
+                      <label *ngIf="post.transActualDepartureTimeDay9 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay9}}</span></label>
+                      <label *ngIf="post.transReportingTimeDay9 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay9}}</span></label>
+                    </div>
+                    <div class="col-sm-6" style="float: left;">
+                      <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay9 !== ''">To: </label>
+                      <label  >{{ post.transEndingPointtDay9 }}, {{post.transArrivalCityDay9}}, {{ post.transArrivalCountryDay9 }}</label>
+                      <label *ngIf="post.transActualArrivalTimeDay9 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay9}} </span> </label>
+                    </div>
+
+                    <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay9 !== ''">
+                      <br />
+                      <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                      <label>{{post.transportationNoteDay9}}</label>
+                    </div>
+                   </div>
+                    <!-- End Transportation Day9 -->
+                    <!-- Return Transportation Day9 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay9 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay9 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay9 !==''">{{post.returnTransportModeDay9}} From {{post.returnTransportTitleDay9}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay9 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay9 !==''">{{ post.returnTransEndingPointtDay9 }}, {{post.returnTransArrivalCityDay9}}, {{ post.returnTransArrivalCountryDay9 }}</label>
+                        <label *ngIf="post.returnTransportModeDay9 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay9}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay9 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay9}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay9 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay9}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay9 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay9 !== ''" >{{post.returnTransStartingPointtDay9}}, {{post.returnTransDepartCityDay9}}, {{post.returnTransDepartCountryDay9}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay9 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay9}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay9 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay9}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day9 END -->
+
+                    <!-- Start Transportation Day10 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay10 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay10 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay10 !==''">{{post.dayPlanDay10}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay10 !==''">{{post.transportModeDay10}} From {{post.transportTitleDay10}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay10 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay10 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay10 !== ''">{{post.transStartingPointtDay10}}, {{post.transDepartCityDay10}}, {{post.transDepartCountryDay10}}</label>
+                        <label *ngIf="post.transportModeDay10 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay10}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay10 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay10}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay10 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay10}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay10 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay10 }}, {{post.transArrivalCityDay10}}, {{ post.transArrivalCountryDay10 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay10 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay10}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay10 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay10}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day10 -->
+                    <!-- Return Transportation Day10 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay10 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay10 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay10 !==''">{{post.returnTransportModeDay10}} From {{post.returnTransportTitleDay10}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay10 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay10 !==''">{{ post.returnTransEndingPointtDay10 }}, {{post.returnTransArrivalCityDay10}}, {{ post.returnTransArrivalCountryDay10 }}</label>
+                        <label *ngIf="post.returnTransportModeDay10 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay10}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay10 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay10}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay10 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay10}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay10 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay10 !== ''" >{{post.returnTransStartingPointtDay10}}, {{post.returnTransDepartCityDay10}}, {{post.returnTransDepartCountryDay10}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay10 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay10}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay10 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay10}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day10 END -->
+
+                    <!-- Start Transportation Day11 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay11 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay11 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay11 !==''">{{post.dayPlanDay11}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay11 !==''">{{post.transportModeDay11}} From {{post.transportTitleDay11}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay11 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay11 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay11 !== ''">{{post.transStartingPointtDay11}}, {{post.transDepartCityDay11}}, {{post.transDepartCountryDay11}}</label>
+                        <label *ngIf="post.transportModeDay11 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay11}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay11 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay11}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay11 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay11}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay11 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay11 }}, {{post.transArrivalCityDay11}}, {{ post.transArrivalCountryDay11 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay11 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay11}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay11 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay11}}</label>
+                      </div>
+                    </div>
+                    <!-- End Transportation Day11 -->
+                    <!-- Return Transportation Day11 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay11 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay11 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay11 !==''">{{post.returnTransportModeDay11}} From {{post.returnTransportTitleDay11}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay11 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay11 !==''">{{ post.returnTransEndingPointtDay11 }}, {{post.returnTransArrivalCityDay11}}, {{ post.returnTransArrivalCountryDay11 }}</label>
+                        <label *ngIf="post.returnTransportModeDay11 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay11}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay11 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay11}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay11 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay11}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay11 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay11 !== ''" >{{post.returnTransStartingPointtDay11}}, {{post.returnTransDepartCityDay11}}, {{post.returnTransDepartCountryDay11}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay11 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay11}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay11 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay11}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day11 END -->
+
+                    <!-- Start Transportation Day12 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay12 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay12 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay12 !==''">{{post.dayPlanDay12}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay12 !==''">{{post.transportModeDay12}} From {{post.transportTitleDay12}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay12 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay12 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay12 !== ''">{{post.transStartingPointtDay12}}, {{post.transDepartCityDay12}}, {{post.transDepartCountryDay12}}</label>
+                        <label *ngIf="post.transportModeDay12 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay12}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay12 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay12}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay12 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay12}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay12 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay12 }}, {{post.transArrivalCityDay12}}, {{ post.transArrivalCountryDay12 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay12 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay12}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay12 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay12}}</label>
+                      </div>
+                      </div>
+                    <!-- End Transportation Day12 -->
+                    <!-- Return Transportation Day12 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay12 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay12 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay12 !==''">{{post.returnTransportModeDay12}} From {{post.returnTransportTitleDay12}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay12 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay12 !==''">{{ post.returnTransEndingPointtDay12 }}, {{post.returnTransArrivalCityDay12}}, {{ post.returnTransArrivalCountryDay12 }}</label>
+                        <label *ngIf="post.returnTransportModeDay12 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay12}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay12 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay12}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay12 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay12}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay12 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay12 !== ''" >{{post.returnTransStartingPointtDay12}}, {{post.returnTransDepartCityDay12}}, {{post.returnTransDepartCountryDay12}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay12 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay12}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay12 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay12}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day12 END -->
+
+                    <!-- Start Transportation Day13 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay13 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay13 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay13 !==''">{{post.dayPlanDay13}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay13 !==''">{{post.transportModeDay13}} From {{post.transportTitleDay13}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay13 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay13 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay13 !== ''">{{post.transStartingPointtDay13}}, {{post.transDepartCityDay13}}, {{post.transDepartCountryDay13}}</label>
+                        <label *ngIf="post.transportModeDay13 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay13}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay13 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay13}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay13 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay13}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay13 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay13 }}, {{post.transArrivalCityDay13}}, {{ post.transArrivalCountryDay13 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay13 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay13}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay13 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay13}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day13 -->
+                    <!-- Return Transportation Day13 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay13 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay13 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay13 !==''">{{post.returnTransportModeDay13}} From {{post.returnTransportTitleDay13}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay13 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay13 !==''">{{ post.returnTransEndingPointtDay13 }}, {{post.returnTransArrivalCityDay13}}, {{ post.returnTransArrivalCountryDay13 }}</label>
+                        <label *ngIf="post.returnTransportModeDay13 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay13}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay13 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay13}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay13 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay13}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay13 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay13 !== ''" >{{post.returnTransStartingPointtDay13}}, {{post.returnTransDepartCityDay13}}, {{post.returnTransDepartCountryDay13}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay13 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay13}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay13 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay13}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day13 END -->
+
+                    <!-- Start Transportation Day14 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay14 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay14 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay14 !==''">{{post.dayPlanDay14}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay14 !==''">{{post.transportModeDay14}} From {{post.transportTitleDay14}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay14 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay14 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay14 !== ''">{{post.transStartingPointtDay14}}, {{post.transDepartCityDay14}}, {{post.transDepartCountryDay14}}</label>
+                        <label *ngIf="post.transportModeDay14 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay14}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay14 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay14}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay14 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay14}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay14 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay14 }}, {{post.transArrivalCityDay14}}, {{ post.transArrivalCountryDay14 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay14 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay14}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay14 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay14}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day14 -->
+                    <!-- Return Transportation Day14 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay14 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay14 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay14 !==''">{{post.returnTransportModeDay14}} From {{post.returnTransportTitleDay14}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay14 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay14 !==''">{{ post.returnTransEndingPointtDay14 }}, {{post.returnTransArrivalCityDay14}}, {{ post.returnTransArrivalCountryDay14 }}</label>
+                        <label *ngIf="post.returnTransportModeDay14 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay14}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay14 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay14}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay14 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay14}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay14 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay14 !== ''" >{{post.returnTransStartingPointtDay14}}, {{post.returnTransDepartCityDay14}}, {{post.returnTransDepartCountryDay14}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay14 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay14}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay14 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay14}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day14 END -->
+
+                    <!-- Start Transportation Day15 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay15 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay15 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay15 !==''">{{post.dayPlanDay15}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay15 !==''">{{post.transportModeDay15}} From {{post.transportTitleDay15}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay15 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay15 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay15 !== ''">{{post.transStartingPointtDay15}}, {{post.transDepartCityDay15}}, {{post.transDepartCountryDay15}}</label>
+                        <label *ngIf="post.transportModeDay15 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay15}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay15 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay15}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay15 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay15}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay15 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay15 }}, {{post.transArrivalCityDay15}}, {{ post.transArrivalCountryDay15 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay15 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay15}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay15 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay15}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day15 -->
+                    <!-- Return Transportation Day15 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay15 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay15 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay15 !==''">{{post.returnTransportModeDay15}} From {{post.returnTransportTitleDay15}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay15 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay15 !==''">{{ post.returnTransEndingPointtDay15 }}, {{post.returnTransArrivalCityDay15}}, {{ post.returnTransArrivalCountryDay15 }}</label>
+                        <label *ngIf="post.returnTransportModeDay15 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay15}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay15 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay15}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay15 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay15}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay15 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay15 !== ''" >{{post.returnTransStartingPointtDay15}}, {{post.returnTransDepartCityDay15}}, {{post.returnTransDepartCountryDay15}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay15 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay15}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay15 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay15}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day15 END -->
+
+                    <!-- Start Transportation Day16 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay16 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay16 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay16 !==''">{{post.dayPlanDay16}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay16 !==''">{{post.transportModeDay16}} From {{post.transportTitleDay16}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay16 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay16 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay16 !== ''">{{post.transStartingPointtDay16}}, {{post.transDepartCityDay16}}, {{post.transDepartCountryDay16}}</label>
+                        <label *ngIf="post.transportModeDay16 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay16}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay16 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay16}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay16 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay16}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay16 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay16 }}, {{post.transArrivalCityDay16}}, {{ post.transArrivalCountryDay16 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay16 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay16}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay16 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay16}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day16 -->
+                    <!-- Return Transportation Day16 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay16 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay16 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay16 !==''">{{post.returnTransportModeDay16}} From {{post.returnTransportTitleDay16}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay16 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay16 !==''">{{ post.returnTransEndingPointtDay16 }}, {{post.returnTransArrivalCityDay16}}, {{ post.returnTransArrivalCountryDay16 }}</label>
+                        <label *ngIf="post.returnTransportModeDay16 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay16}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay16 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay16}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay16 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay16}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay16 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay16 !== ''" >{{post.returnTransStartingPointtDay16}}, {{post.returnTransDepartCityDay16}}, {{post.returnTransDepartCountryDay16}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay16 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay16}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay16 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay16}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day16 END -->
+
+                    <!-- Start Transportation Day17 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay17 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay17 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay17 !==''">{{post.dayPlanDay17}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay17 !==''">{{post.transportModeDay17}} From {{post.transportTitleDay17}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay17 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay17 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay17 !== ''">{{post.transStartingPointtDay17}}, {{post.transDepartCityDay17}}, {{post.transDepartCountryDay17}}</label>
+                        <label *ngIf="post.transportModeDay17 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay17}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay17 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay17}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay17 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay17}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay17 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay17 }}, {{post.transArrivalCityDay17}}, {{ post.transArrivalCountryDay17 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay17 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay17}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay17 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay17}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day17 -->
+                    <!-- Return Transportation Day17 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay17 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay17 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay17 !==''">{{post.returnTransportModeDay17}} From {{post.returnTransportTitleDay17}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay17 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay17 !==''">{{ post.returnTransEndingPointtDay17 }}, {{post.returnTransArrivalCityDay17}}, {{ post.returnTransArrivalCountryDay17 }}</label>
+                        <label *ngIf="post.returnTransportModeDay17 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay17}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay17 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay17}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay17 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay17}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay17 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay17 !== ''" >{{post.returnTransStartingPointtDay17}}, {{post.returnTransDepartCityDay17}}, {{post.returnTransDepartCountryDay17}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay17 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay17}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay17 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay17}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day17 END -->
+
+                    <!-- Start Transportation Day18 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay18 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay18 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay18 !==''">{{post.dayPlanDay18}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay18 !==''">{{post.transportModeDay18}} From {{post.transportTitleDay18}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay18 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay18 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay18 !== ''">{{post.transStartingPointtDay18}}, {{post.transDepartCityDay18}}, {{post.transDepartCountryDay18}}</label>
+                        <label *ngIf="post.transportModeDay18 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay18}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay18 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay18}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay18 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay18}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay18 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay18 }}, {{post.transArrivalCityDay18}}, {{ post.transArrivalCountryDay18 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay18 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay18}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay18 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay18}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day18 -->
+                    <!-- Return Transportation Day18 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay18 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay18 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay18 !==''">{{post.returnTransportModeDay18}} From {{post.returnTransportTitleDay18}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay18 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay18 !==''">{{ post.returnTransEndingPointtDay18 }}, {{post.returnTransArrivalCityDay18}}, {{ post.returnTransArrivalCountryDay18 }}</label>
+                        <label *ngIf="post.returnTransportModeDay18 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay18}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay18 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay18}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay18 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay18}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay18 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay18 !== ''" >{{post.returnTransStartingPointtDay18}}, {{post.returnTransDepartCityDay18}}, {{post.returnTransDepartCountryDay18}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay18 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay18}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay18 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay18}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day18 END -->
+
+                    <!-- Start Transportation Day19 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay19 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay19 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay19 !==''">{{post.dayPlanDay19}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay19 !==''">{{post.transportModeDay19}} From {{post.transportTitleDay19}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay19 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay19 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay19 !== ''">{{post.transStartingPointtDay19}}, {{post.transDepartCityDay19}}, {{post.transDepartCountryDay19}}</label>
+                        <label *ngIf="post.transportModeDay19 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay19}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay19 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay19}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay19 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay19}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay19 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay19 }}, {{post.transArrivalCityDay19}}, {{ post.transArrivalCountryDay19 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay19 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay19}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay19 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay19}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day19 -->
+                    <!-- Return Transportation Day19 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay19 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay19 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay19 !==''">{{post.returnTransportModeDay19}} From {{post.returnTransportTitleDay19}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay19 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay19 !==''">{{ post.returnTransEndingPointtDay19 }}, {{post.returnTransArrivalCityDay19}}, {{ post.returnTransArrivalCountryDay19 }}</label>
+                        <label *ngIf="post.returnTransportModeDay19 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay19}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay19 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay19}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay19 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay19}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay19 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay19 !== ''" >{{post.returnTransStartingPointtDay19}}, {{post.returnTransDepartCityDay19}}, {{post.returnTransDepartCountryDay19}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay19 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay19}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay19 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay19}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day19 END -->
+
+                    <!-- Start Transportation Day20 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay20 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay20 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay20 !==''">{{post.dayPlanDay20}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay20 !==''">{{post.transportModeDay20}} From {{post.transportTitleDay20}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay20 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay20 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay20 !== ''">{{post.transStartingPointtDay20}}, {{post.transDepartCityDay20}}, {{post.transDepartCountryDay20}}</label>
+                        <label *ngIf="post.transportModeDay20 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay20}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay20 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay20}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay20 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay20}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay20 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay20 }}, {{post.transArrivalCityDay20}}, {{ post.transArrivalCountryDay20 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay20 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay20}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay20 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay20}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day20 -->
+                    <!-- Return Transportation Day20 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay20 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay20 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay20 !==''">{{post.returnTransportModeDay20}} From {{post.returnTransportTitleDay20}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay20 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay20 !==''">{{ post.returnTransEndingPointtDay20 }}, {{post.returnTransArrivalCityDay20}}, {{ post.returnTransArrivalCountryDay20 }}</label>
+                        <label *ngIf="post.returnTransportModeDay20 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay20}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay20 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay20}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay20 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay20}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay20 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay20 !== ''" >{{post.returnTransStartingPointtDay20}}, {{post.returnTransDepartCityDay20}}, {{post.returnTransDepartCountryDay20}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay20 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay20}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay20 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay20}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day20 END -->
+
+                    <!-- Start Transportation Day21 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay21 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay21 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay21 !==''">{{post.dayPlanDay21}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay21 !==''">{{post.transportModeDay21}} From {{post.transportTitleDay21}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay21 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay21 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay21 !== ''">{{post.transStartingPointtDay21}}, {{post.transDepartCityDay21}}, {{post.transDepartCountryDay21}}</label>
+                        <label *ngIf="post.transportModeDay21 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay21}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay21 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay21}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay21 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay21}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay21 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay21 }}, {{post.transArrivalCityDay21}}, {{ post.transArrivalCountryDay21 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay21 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay21}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay21 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay21}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day21 -->
+                    <!-- Return Transportation Day21 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay21 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay21 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay21 !==''">{{post.returnTransportModeDay21}} From {{post.returnTransportTitleDay21}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay21 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay21 !==''">{{ post.returnTransEndingPointtDay21 }}, {{post.returnTransArrivalCityDay21}}, {{ post.returnTransArrivalCountryDay21 }}</label>
+                        <label *ngIf="post.returnTransportModeDay21 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay21}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay21 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay21}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay21 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay21}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay21 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay21 !== ''" >{{post.returnTransStartingPointtDay21}}, {{post.returnTransDepartCityDay21}}, {{post.returnTransDepartCountryDay21}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay21 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay21}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay21 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay21}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day21 END -->
+                    <!-- Start Transportation Day22 -->
+                    <div class="transport-start-block" *ngIf="post.transDepartDateDay22 !== ''">
+                      <div class="col-sm-12" style="padding-left: 0;">
+                        <div class="returnDates">
+                          <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 15px;border-bottom: 2px dotted;">{{post.transDepartDateDay22 | date}}</h5>
+                        </div>
+                      </div>
+                      <!-- <h4 style="color:coral;font-size: 18px;margin: 20px 0 15px 15px;width: 100%;" *ngIf="post.dayPlanDay22 !==''">{{post.dayPlanDay22}}</h4> -->
+                      <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%" *ngIf="post.transportTitleDay22 !==''">{{post.transportModeDay22}} From {{post.transportTitleDay22}}</h4>
+                      <!-- <div style="margin: 15px;background-color: khaki;height: 3px;width: 96%;" *ngIf="post.dayPlanDay22 !==''"></div> -->
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.transStartingPointtDay22 !== ''">From: </label>
+                        <label *ngIf="post.transStartingPointtDay22 !== ''">{{post.transStartingPointtDay22}}, {{post.transDepartCityDay22}}, {{post.transDepartCountryDay22}}</label>
+                        <label *ngIf="post.transportModeDay22 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.transportModeDay22}}</span></label>
+                        <label *ngIf="post.transActualDepartureTimeDay22 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.transActualDepartureTimeDay22}}</span></label>
+                        <label *ngIf="post.transReportingTimeDay22 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.transReportingTimeDay22}}</span></label>
+                      </div>
+                      <div class="col-sm-6" style="float: left;">
+                        <label style="margin-bottom: 10px;color:#02177d;font-weight: 500;" *ngIf="post.transEndingPointtDay22 !== ''">To: </label>
+                        <label  >{{ post.transEndingPointtDay22 }}, {{post.transArrivalCityDay22}}, {{ post.transArrivalCountryDay22 }}</label>
+                        <label *ngIf="post.transActualArrivalTimeDay22 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.transActualArrivalTimeDay22}} </span> </label>
+                      </div>
+
+                      <div class="col-sm-12" style="clear: both;" *ngIf="post.transportationNoteDay22 !== ''">
+                        <br />
+                        <label style="color:#02177d;font-weight: 500;">Transpotation Note</label>
+                        <label>{{post.transportationNoteDay22}}</label>
+                      </div>
+                      </div>
+                      <!-- End Transportation Day22 -->
+                    <!-- Return Transportation Day22 -->
+                    <div class="col-sm-12" *ngIf="post.returnTransportTitleDay22 !==''">
+                      <div class="returnDates">
+                        <h5 style="color:coral;font-size: 22px;margin: 50px 0 15px 0px;border-bottom: 2px dotted;">{{post.returnTransDepartDateDay22 | date}}</h5>
+                      </div>
+                      <div class="row">
+                        <h4 style="color:#277eff;font-size: 17px;margin: 0 0 15px 15px;width: 100%;" *ngIf="post.returnTransportTitleDay22 !==''">{{post.returnTransportModeDay22}} From {{post.returnTransportTitleDay22}}</h4>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay22 !== ''">From: </label>
+                        <label  *ngIf="post.returnTransEndingPointtDay22 !==''">{{ post.returnTransEndingPointtDay22 }}, {{post.returnTransArrivalCityDay22}}, {{ post.returnTransArrivalCountryDay22 }}</label>
+                        <label *ngIf="post.returnTransportModeDay22 !== ''" >Transportation Mode: <span style=" margin-left: 8px;">{{post.returnTransportModeDay22}}</span></label>
+                        <label *ngIf="post.returnTransActualDepartureTimeDay22 !== ''" >Actual Departure Time: <span style=" margin-left: 8px;">{{post.returnTransActualDepartureTimeDay22}}</span></label>
+                        <label *ngIf="post.returnTransReportingTimeDay22 !== ''" >Reporting Time: <span style=" margin-left: 8px;">{{post.returnTransReportingTimeDay22}}</span></label>
+                        </div>
+                        <div class="col-sm-6">
+                        <label style="margin-bottom: 10px;color:#02177d; font-weight: 500;" *ngIf="post.returnTransportTitleDay22 !== ''">To: </label>
+                        <label *ngIf="post.returnTransStartingPointtDay22 !== ''" >{{post.returnTransStartingPointtDay22}}, {{post.returnTransDepartCityDay22}}, {{post.returnTransDepartCountryDay22}}</label>
+                        <label *ngIf="post.returnTransActualArrivalTimeDay22 !== ''" >Actual Arrival Time: <span style=" margin-left: 8px;"> {{post.returnTransActualArrivalTimeDay22}} </span> </label>
+                        </div>
+                      </div>
+                      <br />
+                      <div class="col-sm-12" style="clear: both; padding: 0;" *ngIf="post.returnTransportationNoteDay22 !== ''">
+                        <label style="color:#02177d;font-weight: 500;">Return Transpotation Note</label>
+                        <label>{{post.returnTransportationNoteDay22}}</label>
+                      </div>
+                    </div>
+                    <!-- Return Transportation Day22 END -->
+
+                </div>
+
+              </div>
+              </div>
+
+              <div class="pdfpage5 pdf-page-break">
+                Hotel Details
+              </div>
+
+              <div class="pdfpage6 pdf-page-break" *ngIf="post.inclusionnoteText !==''">
+                <div class="terms_and_condition_wrapper">
+                  <div class="terms_and_condition_title">
+                    <h1>Inclusion & Exclusion / Cost,  <br /> Terms & Condition / Cancellation</h1>
+                  </div>
+                  <div class="terms_and_condition_content">
+                      <br />
+                      <div class="col-sm-6" *ngIf="post.inclusionnoteText !==''">
+                        <h5 class="" for="title">Inclusion</h5>
+                        <p> {{ post.inclusionnoteText }} </p>
+                      </div>
+                      <div class="col-sm-6" *ngIf="post.exclusionnoteText !==''">
+                        <h5 class="" for="title">Exclusion</h5>
+                        <p> {{ post.exclusionnoteText }} </p>
+                      </div>
+                      <div class="col-sm-6" *ngIf="post.itineryCostText !==''">
+                        <h5 class="" for="title">Cost</h5>
+                        <p> {{ post.itineryCostText }} </p>
+                      </div>
+                      <div class="col-sm-6" *ngIf="post.itinerytermsText !==''">
+                        <h5 class="" for="title">Term & Condition</h5>
+                        <p> {{ post.itinerytermsText }} </p>
+                      </div>
+                      <div class="col-sm-6" *ngIf="post.itineryCancelText !==''">
+                        <h5 class="" for="title">Cancellation</h5>
+                        <p> {{ post.itineryCancelText }} </p>
+                      </div>
+                      <div class="col-sm-6" *ngIf="post.itinerytipsText !==''">
+                        <h5 class="" for="title">Tips</h5>
+                        <p> {{ post.itinerytipsText }} </p>
+                      </div>
+                      <div class="col-sm-6" *ngIf="post.itineryVisaInfoText !==''">
+                        <h5 class="" for="title">Other / Visa Information</h5>
+                        <p> {{ post.itineryVisaInfoText }} </p>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pdfpage7 pdf-page-break" *ngIf="post.itinerarythankyou !==''">
+                <div class="thankyou-wrapper">
+                  <h2>
+                  <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/thank-you.png">
+                  </h2>
+                  <div class="form-group">
+                    <div class="col-sm-12">
+                        <div class="thankyounote thankyounote1" *ngIf="post.itinerarythankyou == 'thankyounote1'">
+                            <p>Thank you very much.</p>
+                            <p>We trust the above be as per your requirements and hope that it will be helpful towards your holiday planning. To ensure you travel with a peace of mind, Name of our company also offers a comprehensive range of travel insurance plans, as well as other services that can be customized for the individual to keep you protected in the event of unexpected occurrences.</p>
+                            <p>If you should need any assistance or information further to this, please feel free to reach out to us via phone or email.</p>
+                        </div>
+                        <div class="thankyounote thankyounote2" *ngIf="post.itinerarythankyou == 'thankyounote2'">
+                            <p>Thank you, and we hope that you found the above to be in order. We trust the provided to be in accordance with your specifications and hope that it will support your holiday planning. To help our customers travel with ease, Name of our company also provides a comprehensive suite of travel insurance plans and other services, all of which can be customized to cater to individual needs and keep you well covered.</p>
+                            <p>If you require any further assistance or clarification, please feel free to reach out to us directly by giving us a call or dropping us an email.</p>
+                        </div>
+                        <div class="thankyounote thankyounote3" *ngIf="post.itinerarythankyou == 'thankyounote3'">
+                            <p>Thank you.</p>
+                            <p>
+                            We believe the above provided is according to your specified requirements, and hope that the information will be helpful for your holiday plans. For travelers who wish to ensure they are well covered for any incidents, Name of our company also offers a wide range of travel insurance solutions and services, which can be customized based on individual needs and preferences.</p>
+                            <p>For any clarification or further information at all regarding the above, please do not hesitate to call or email us directly.</p>
+                        </div>
+                        <div class="thankyounote thankyounote4" *ngIf="post.itinerarythankyou == 'thankyounote4'">
+                            <p>Thank you very much.</p>
+                            <p>We hope that the above is aligned to your stated requirements and that it will be helpful for the planning of your trip. Name of our company understands the importance of traveling with a peace of mind, which is why we also offer an extensive range of travel insurance solutions and other services that can cover any eventuality and also cater to the specific needs of any individual.</p>
+                            <p>If you should require further assistance or any details, please reach out to us directly via phone or email.</p>
+                        </div>
+                        <div class="thankyounote thankyounote5" *ngIf="post.itinerarythankyou == 'thankyounote5'">
+                            <p>We hope that you find the above to be in line with your specifications as well as helpful for your holiday planning. As it is important for travelers to be well prepared for any contingencies, Name of our company also offer a complete suite of travel insurance plans and other services which you can customize according to your individual needs.</p>
+                            <p>Thank you once again for using our services, and if you should require any further information or assistance, please free feel to give us a call or send us an email.</p>
+                        </div>
+                        <div class="thankyounote thankyounote6" *ngIf="post.itinerarythankyou == 'thankyounote6'">
+                            <p>We believe that the above provided fulfills your specific requirements, and invite you to reach out to us if you should require any further assistance. As your safety is important to us, Name of our company also offers a comprehensive suite of travel insurance plans and services which can cater to your individual needs and cover a wide range of events.</p>
+                            <p>
+                            We hope this has been helpful for your travel planning, and thank you for choosing Name of our company. For further information, please free to reach out to us directly.</p>
+                        </div>
+                        <div class="thankyounote thankyounote7" *ngIf="post.itinerarythankyou == 'thankyounote7'">
+                            <p>We trust that the above information commensurates with your requirements, and hope that you find this helpful for the planning for your holiday. Thank you for choosing our services, and if you require further assistance on this please do not hesitate to reach out to us.</p>
+                            <p>At Name of our company we understand that having adequate protection is important for our travelers to enjoy their trips with a peace of mind, which is why we also offer a full suite of travel insurance solutions as well as other services to make sure you will be well prepared for any contingencies. If you would like to learn more about this, drop us a call or email today.</p>
+                        </div>
+                        <div class="thankyounote thankyounote8" *ngIf="post.itinerarythankyou == 'thankyounote8'">
+                            <p>We hope that you find the above to be as per your stated requirements and that it is helpful for your holiday planning. To complete your travel plan, Name of our company recommends that you prepare for any eventualities with a travel insurance policy. We offer an extensive range of travel insurance solutions as well as other services which are varied enough to cater to individual needs. For further information on this or for any assistance on the above, feel free to reach out to us directly via phone or email.</p>
+                            <p>Thank you once again for choosing Name of our company and we wish you a great day.</p>
+                        </div>
+                        <div class="thankyounote thankyounote9" *ngIf="post.itinerarythankyou == 'thankyounote9'">
+                            <p>The above has been provided based on your stated requirements, and we hope you find everything to be in order. It is our pleasure to help you with your holiday planning, and we thank you for your support.</p>
+                            <p>
+                            To ensure that you stay safe and well-protected during your travels, Name of our company also provides a comprehensive range of travel insurance plans and services, which can cater for various individual needs and events. For more information about this or for assistance on the above, do not hesitate to reach out to us via phone or email.</p>
+                        </div>
+                        <div class="thankyounote thankyounote10" *ngIf="post.itinerarythankyou == 'thankyounote10'">
+                            <p>We believe that the above is in line with your travel requirements, and welcome you to reach out to us should you need further clarification or assistance on this. We hope that you have found our service to be helpful, and thank you for your support.</p>
+                            <p>At Name of our company, we believe that it is important to plan for all contingencies, which is why we also offer a full suite of travel insurance solutions as well as other services that can help you stay covered for any unexpected events based on your specific needs. If you would like more information on this, drop us a call or email today.</p>
+                        </div>
+                      </div>
+                  </div>
+                  <h3>We are member of...</h3>
+                  <div class="image-brands-wrapper">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/dpsnram.jpg">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/dpswarangal.jpg">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/hyd.jpg">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/hyd2.jpg">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/jalgoan.jpg">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/savesnellore.jpg">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/sp.jpg">
+                      <img alt="logo" src="https://holidaybazaar.s3-us-west-2.amazonaws.com/kopargoan.jpg">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <mat-action-row>
+              <div class="pdf-controlls">
+                <button mat-button color="primary">Itinerary</button>
+                <!-- <button mat-button color="primary" (click)="generatePdf(post)">Itinerary</button> -->
+                <button mat-button color="primary">Invoice</button>
+                <!-- <button mat-button color="primary" [routerLink] = "['/pdfpage', post.id]">Lead pdf</button> -->
+                <button mat-button color="primary">Hotel Voucher</button>
+              </div>
+            </mat-action-row>
+          </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

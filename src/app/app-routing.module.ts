@@ -58,6 +58,7 @@ import { InternationalProd11Component } from './product-pages/international-prod
 import { InternationalProd12Component } from './product-pages/international-prod12/international-prod12.component';
 import { InternationalProd13Component } from './product-pages/international-prod13/international-prod13.component';
 import {SearchBookingComponent} from './search-booking/search-booking.component'
+import {HotelDetailComponent} from './hotel-detail/hotel-detail.component'
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -115,7 +116,8 @@ const routes: Routes = [
   { path: 'international12', component: InternationalProd12Component },
   { path: 'international13', component: InternationalProd13Component },
   { path: 'airline/search', component: SearchBookingComponent },
-  { path: 'addHotel', component: AddHotelComponent },
+  { path: 'hotels/:id', component: HotelDetailComponent },
+  { path: 'hotels', component: AddHotelComponent },
   { path: 'addNewHotel', component: AddNewHotelComponent },
   { path: 'hotelVoucher', component: HotelVoucherComponent }
 

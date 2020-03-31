@@ -55,12 +55,12 @@ export class AddNewHotelComponent implements OnInit {
   }
 
   backToAddHotel() {
-    this.router.navigate(['addHotel']);
+    this.router.navigateByUrl('/hotels')
   }
 
   onSaveHotel() {
     this.hotelService.saveHotels(this.postForm.value).subscribe(result => {
-      this.router.navigate(['addHotel']);
+      this.router.navigateByUrl('/hotels')
     })
   }
 }

@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class AirportsService {
 
-  airports=[
+  airports:any=[
     {
         "iata": "UTK",
         "lon": "169.86667",
@@ -73235,10 +73235,11 @@ export class AirportsService {
 
   search(data){
     let results=[]
-    this.airports.forEach(air=>{
+    this.airports.forEach((air)=>{
         if(air.name && air.iata){
-            if (air.name.toLowerCase().includes(data.toLowerCase()) || air.iata.toLowerCase().includes(data.toLowerCase()))
+            if (((air.name).toLowerCase()).includes(data) || ((air.iata).toLowerCase()).includes(data)){
                 results.push(air)
+            }
         }
     })
     return results

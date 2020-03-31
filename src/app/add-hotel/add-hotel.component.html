@@ -25,48 +25,10 @@
                 <td>{{hotel.addHotelRating}}</td>
                 <td>{{hotel.addHotelAddress}}</td>
                 <td>{{hotel.addHotelCity}}</td>
-                <td>NA</td>
+                <td>
+                  <a [routerLink]="['/hotels', hotel._id]" routerLinkActive="router-link-active">detail</a>
+                </td>
               </tr>
-              <!-- <tr>
-                <td>2</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-              </tr>
-              <tr>
-                <td>4</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-              </tr>
-              <tr>
-                <td>6</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-                <td>NA</td>
-              </tr> -->
             </tbody>
           </table>
         </div>

@@ -5,7 +5,9 @@ body {
   background-color: #fff !important;
   color: rgba(0,0,0,.87);
 }
-
+.row{
+  width: 100%;
+}
 .header-wrapper {
   background: #277eff;
   padding: 10px 15px;

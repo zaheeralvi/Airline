@@ -82,6 +82,9 @@ import { InternationalProd11Component } from './product-pages/international-prod
 import { InternationalProd12Component } from './product-pages/international-prod12/international-prod12.component';
 import { InternationalProd13Component } from './product-pages/international-prod13/international-prod13.component';
 import { SearchBookingComponent } from './search-booking/search-booking.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { HotelDetailComponent } from './hotel-detail/hotel-detail.component';
+
 
 
 @NgModule({
@@ -149,9 +152,10 @@ import { SearchBookingComponent } from './search-booking/search-booking.componen
     InternationalProd12Component,
     InternationalProd13Component,
     SearchBookingComponent,
-
+    HotelDetailComponent,
   ],
   imports: [
+    NgSelectModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
